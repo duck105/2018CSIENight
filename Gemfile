@@ -23,6 +23,7 @@ gem 'bourbon', '~> 5.0'
 gem 'administrate', '~> 0.8.1'
 gem 'kaminari', '~> 1.1', '>= 1.1.1'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
+gem 'awesome_rails_console'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
