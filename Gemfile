@@ -22,6 +22,7 @@ gem 'carrierwave', '~> 1.2', '>= 1.2.2'
 gem 'bourbon', '~> 5.0'
 gem 'administrate', '~> 0.8.1'
 gem 'kaminari', '~> 1.1', '>= 1.1.1'
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
