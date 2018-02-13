@@ -11,7 +11,7 @@ class EventDashboard < Administrate::BaseDashboard
     id: Field::Number,
     title: Field::String,
     schedule: Field::String,
-    content: CkEditorField,
+    introduction: CkEditorField,
     image: ImageField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -35,7 +35,7 @@ class EventDashboard < Administrate::BaseDashboard
     :id,
     :title,
     :schedule,
-    :content,
+    :introduction,
     :image,
     :created_at,
     :updated_at,
@@ -47,7 +47,7 @@ class EventDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :title,
     :schedule,
-    :content,
+    :introduction,
     :image,
   ].freeze
 

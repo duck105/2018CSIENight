@@ -1,3 +1,3 @@
-if ($("#event_content").length) {
-    CKEDITOR.replace('event_content', {"uiColor":"#2a94d6"});
+if ($("#event_introduction").length) {
+    CKEDITOR.replace('event_introduction', {"uiColor":"#2a94d6"});
 }
