@@ -11,7 +11,7 @@ class EventDashboard < Administrate::BaseDashboard
     id: Field::Number,
     title: Field::String,
     schedule: Field::String,
-    content: Field::Text,
+    content: CkEditorField,
     image: ImageField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -26,7 +26,7 @@ class EventDashboard < Administrate::BaseDashboard
     :id,
     :title,
     :schedule,
-    :content,
+    :image,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES

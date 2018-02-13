@@ -1,8 +1,8 @@
 <% @events.each do |event| %>
   <h2><%= event.title %></h3>
   <br>
-  <h3><%= event.content %></h3>
-  <br>
-  <br>
+  <h3><%= event.content.html_safe %></h3>
+  <br><br>
   <%= image_tag(event.image_url.to_s) %>
+  <br><br><br><br><br>
 <% end %>

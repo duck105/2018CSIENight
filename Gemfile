@@ -24,6 +24,7 @@ gem 'administrate', '~> 0.8.1'
 gem 'kaminari', '~> 1.1', '>= 1.1.1'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'awesome_rails_console'
+gem 'ckeditor', github: 'galetahub/ckeditor'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
