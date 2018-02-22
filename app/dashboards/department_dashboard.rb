@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class UserDashboard < Administrate::BaseDashboard
+class DepartmentDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -9,24 +9,12 @@ class UserDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    email: Field::String,
     name: Field::String,
-    encrypted_password: Field::String,
-    reset_password_token: Field::String,
-    reset_password_sent_at: Field::DateTime,
-    remember_created_at: Field::DateTime,
-    sign_in_count: Field::Number,
-    current_sign_in_at: Field::DateTime,
-    last_sign_in_at: Field::DateTime,
-    current_sign_in_ip: Field::String,
-    last_sign_in_ip: Field::String,
+    image: ImageField,
+    order: Field::Number,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    motto: Field::Text,
-    role: Field::String,
-    jobs: Field::Text,
-    department: Field::BelongsTo,
-    avatar: ImageField
+    users: Field::HasMany
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -37,9 +25,8 @@ class UserDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :id,
     :name,
-    :department,
-    :role,
-    :avatar
+    :image,
+    :order,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -47,18 +34,11 @@ class UserDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = [
     :id,
     :name,
-    :department,
-    :role,
-    :jobs,
-    :motto,
+    :image,
+    :order,
+    :users,
     :created_at,
     :updated_at,
-    :sign_in_count,
-    :current_sign_in_at,
-    :last_sign_in_at,
-    :current_sign_in_ip,
-    :last_sign_in_ip,
-    :avatar
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -66,12 +46,9 @@ class UserDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :name,
-    :department,
-    :role,
-    :jobs,
-    :motto,
-    :email,
-    :avatar,
+    :image,
+    :order,
+    :users,
   ].freeze
 
   # Overwrite this method to customize how events are displayed
