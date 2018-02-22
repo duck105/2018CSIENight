@@ -6,12 +6,22 @@
 # you're free to overwrite the RESTful controller actions.
 module Admin
   class ApplicationController < Administrate::ApplicationController
+    before_action :authenticate_user!
     before_action :authenticate_admin
 
-    def authenticate_admin
-      # TODO Add authentication logic here.
+    def raise_404
+      raise ActionController::RoutingError.new('Not Found!')
     end
 
+    def authenticate_admin
+      if Rails.env.development?
+        # nothing  
+      elsif current_user and current_user.is_admin?
+        # nothing
+      else 
+        raise_404
+      end
+    end
     # Override this value to specify the number of elements to display at a time
     # on index pages. Defaults to 20.
     # def records_per_page
