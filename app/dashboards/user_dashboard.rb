@@ -25,7 +25,8 @@ class UserDashboard < Administrate::BaseDashboard
     motto: Field::Text,
     role: Field::String,
     jobs: Field::Text,
-    # department: Field::BelongsTo
+    # department: Field::BelongsTo,
+    avatar: Field::ImageField
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -38,6 +39,7 @@ class UserDashboard < Administrate::BaseDashboard
     :name,
     # :department,
     :role,
+    :avatar
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -55,7 +57,8 @@ class UserDashboard < Administrate::BaseDashboard
     :current_sign_in_at,
     :last_sign_in_at,
     :current_sign_in_ip,
-    :last_sign_in_ip
+    :last_sign_in_ip,
+    :avatar
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -68,6 +71,7 @@ class UserDashboard < Administrate::BaseDashboard
     :jobs,
     :motto,
     :email,
+    :avatar,
   ].freeze
 
   # Overwrite this method to customize how events are displayed
