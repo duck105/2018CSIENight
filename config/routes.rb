@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
+  devise_for :users
   mount Ckeditor::Engine => '/ckeditor'
   namespace :admin do
     resources :events
-
+    resources :users
     root to: "events#index"
   end
 
