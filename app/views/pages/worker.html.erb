@@ -1,0 +1,21 @@
+<h1>工作人員</h1>
+<% @departments.each do |department| %>
+  <h2><%= department.name %></h2>   
+  <br>
+  <% department.users.each do |user| %>
+    <h3><%= user.name %></h3>   
+    <%= image_tag(user.avatar.small) %>
+    <p><%= user.motto %></p> 
+  <% end %>
+<% end %>
+
+
+<h1>表演人員</h1>
+<% @events.each do |event| %>
+  <h2><%= event.title %></h2>
+  <% event.users.each do |user| %>
+    <h3><%= user.name %></h3>   
+    <%= image_tag(user.avatar.small) %>
+    <p><%= user.motto %></p> 
+  <% end %>
+<% end %>
