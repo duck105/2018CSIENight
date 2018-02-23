@@ -1,8 +1,89 @@
-<% @events.each do |event| %>
-  <h2><%= event.title %></h3>
-  <br>
-  <h3><%= event.introduction.html_safe %></h3>
-  <br><br>
-  <%= image_tag(event.image_url.to_s) %>
-  <br><br><br><br><br>
-<% end %>
+<nav>
+	<div class="nav nav-tabs" id="nav-tab" role="tablist">
+		<a class="nav-item nav-link active" data-toggle="tab" href="#nav-music" role="tab" aria-controls="nav-music" aria-selected="true">歌</a>
+		<a class="nav-item nav-link" data-toggle="tab" href="#nav-drama" role="tab" aria-controls="nav-drama" aria-selected="false">劇</a>
+		<a class="nav-item nav-link" data-toggle="tab" href="#nav-light" role="tab" aria-controls="nav-light" aria-selected="false">光</a>
+		<a class="nav-item nav-link" data-toggle="tab" href="#nav-dance" role="tab" aria-controls="nav-dance" aria-selected="false">舞</a>
+	</div>
+</nav>
+
+<div class="tab-content" id="nav-tabContent">
+	<div class="tab-pane fade show active" id="nav-music" role="tabpanel" aria-labelledby="nav-music-tab">
+		<section class="spotlights">
+			<% @music_events.each do |event| %>
+				<section>
+					<%= image_tag(event.image_url.to_s, class: "image") %>
+					<div class="content">
+						<div class="inner">
+							<header class="major">
+								<h3><%= event.title %></h3>
+							</header>
+							<p>
+								<%= event.introduction.html_safe %>
+							</p>
+						</div>
+					</div>
+				</section>
+			<% end %>
+		</section>
+	</div>
+
+	<div class="tab-pane fade show" id="nav-drama" role="tabpanel" aria-labelledby="nav-drama-tab">
+		<section class="spotlights">
+			<% @drama_events.each do |event| %>
+				<section>
+					<%= image_tag(event.image_url.to_s, class: "image") %>
+					<div class="content">
+						<div class="inner">
+							<header class="major">
+								<h3><%= event.title %></h3>
+							</header>
+							<p>
+								<%= event.introduction.html_safe %>
+							</p>
+						</div>
+					</div>
+				</section>
+			<% end %>
+		</section>
+	</div>
+
+	<div class="tab-pane fade show" id="nav-light" role="tabpanel" aria-labelledby="nav-light-tab">
+		<section class="spotlights">
+			<% @light_events.each do |event| %>
+				<section>
+					<%= image_tag(event.image_url.to_s, class: "image") %>
+					<div class="content">
+						<div class="inner">
+							<header class="major">
+								<h3><%= event.title %></h3>
+							</header>
+							<p>
+								<%= event.introduction.html_safe %>
+							</p>
+						</div>
+					</div>
+				</section>
+			<% end %>
+		</section>
+	</div>
+	<div class="tab-pane fade show" id="nav-dance" role="tabpanel" aria-labelledby="nav-dance-tab">
+		<section class="spotlights">
+			<% @dance_events.each do |event| %>
+				<section>
+					<%= image_tag(event.image_url.to_s, class: "image") %>
+					<div class="content">
+						<div class="inner">
+							<header class="major">
+								<h3><%= event.title %></h3>
+							</header>
+							<p>
+								<%= event.introduction.html_safe %>
+							</p>
+						</div>
+					</div>
+				</section>
+			<% end %>
+		</section>
+	</div>
+</div>
