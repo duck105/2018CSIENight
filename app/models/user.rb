@@ -5,6 +5,7 @@ class User < ApplicationRecord
 
   mount_uploader :avatar, AvatarUploader
   belongs_to :department,  optional: true
+  has_and_belongs_to_many :events
 
   def is_admin?
     self.role == "admin"
