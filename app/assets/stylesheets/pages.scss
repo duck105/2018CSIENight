@@ -1,3 +1,183 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* start of event.css */
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	color: #000000;
+}
+
+p{
+	font-size: 16px;
+}
+
+/* Test_nav */
+	.nav-tabs {
+	}
+
+/* Spotlights */
+	.spotlights {
+		border-top: 0 !important;
+	}
+
+		.spotlights + * {
+			border-top: 0 !important;
+		}
+
+		.spotlights > section {
+			display: -moz-flex;
+			display: -webkit-flex;
+			display: -ms-flex;
+			display: flex;
+			-moz-flex-direction: row;
+			-webkit-flex-direction: row;
+			-ms-flex-direction: row;
+			flex-direction: row;
+			/* background-color: #2e3450; V1(original) */
+			background-color: #d9d9d9; /* Light Gray */
+			/* background-color: #4488FF; */
+		}
+
+			.spotlights > section > .image {
+				background-position: center center;
+				background-size: cover;
+				border-radius: 0;
+				display: block;
+				position: relative;
+				width: 30%;
+			}
+
+			.spotlights > section > .image img {
+				height: 400px;
+				width: auto;
+				max-width: 500px;
+				border-radius: 0;
+				display: block;
+			}
+
+			.spotlights > section > .image:before {
+				background: rgba(36, 41, 67, 0.9);
+				content: '';
+				display: block;
+				height: 100%;
+				left: 0;
+				opacity: 0;
+				position: absolute;
+				top: 0;
+				width: 100%;
+			}
+
+			.spotlights > section > .content {
+				display: -moz-flex;
+				display: -webkit-flex;
+				display: -ms-flex;
+				display: flex;
+				-moz-flex-direction: column;
+				-webkit-flex-direction: column;
+				-ms-flex-direction: column;
+				flex-direction: column;
+				-moz-justify-content: center;
+				-webkit-justify-content: center;
+				-ms-justify-content: center;
+				justify-content: center;
+				-moz-align-items: center;
+				-webkit-align-items: center;
+				-ms-align-items: center;
+				align-items: center;
+				padding: 2em 3em 0.1em 3em ;
+				width: 70%;
+			}
+
+			.spotlights > section > .content > .inner {
+				margin: 0 auto;
+				max-width: 100%;
+				width: 65em;
+			}
+
+			.spotlights > section:nth-child(2n) {
+				-moz-flex-direction: row-reverse;
+				-webkit-flex-direction: row-reverse;
+				-ms-flex-direction: row-reverse;
+				flex-direction: row-reverse;
+				background-color: #e6e6e6; /* White */
+				/* background-color: #333856; V1(original) */
+				/* background-color: #6699FF; */
+			}
+
+			.spotlights > section:nth-child(2n) > .content {
+				-moz-align-items: -moz-flex-end;
+				-webkit-align-items: -webkit-flex-end;
+				-ms-align-items: -ms-flex-end;
+				align-items: flex-end;
+			}
+
+		@media screen and (max-width: 1680px) {
+
+			.spotlights > section > .image {
+				width: 40%;
+			}
+
+			.spotlights > section > .content {
+				width: 60%;
+			}
+
+		}
+
+		@media screen and (max-width: 1280px) {
+
+			.spotlights > section > .image {
+				width: 45%;
+			}
+
+			.spotlights > section > .content {
+				width: 55%;
+			}
+
+		}
+
+		@media screen and (max-width: 980px) {
+
+			.spotlights > section {
+				display: block;
+			}
+
+				.spotlights > section > .image {
+					width: 100%;
+				}
+
+				.spotlights > section > .content {
+					padding: 4em 3em 2em 3em ;
+					width: 100%;
+				}
+
+		}
+
+		@media screen and (max-width: 736px) {
+
+			.spotlights > section > .content {
+				padding: 3em 1.5em 1em 1.5em ;
+			}
+
+		}
+
+/* Image */
+	.image {
+		height: 400px;
+		width: auto;
+		max-width: 500px;
+	}
+		@media screen and (max-width: 736px) {
+			.image{
+				height: auto;
+				max-width: 736px;
+			}
+		}
+/* end of event.css */// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
