@@ -8,82 +8,8 @@
 </nav>
 
 <div class="tab-content" id="nav-tabContent">
-	<div class="tab-pane fade show active" id="nav-music" role="tabpanel" aria-labelledby="nav-music-tab">
-		<section class="spotlights">
-			<% @music_events.each do |event| %>
-				<section>
-					<%= image_tag(event.image_url.to_s, class: "image") %>
-					<div class="content">
-						<div class="inner">
-							<header class="major">
-								<h3><%= event.title %></h3>
-							</header>
-							<p>
-								<%= event.introduction.html_safe %>
-							</p>
-						</div>
-					</div>
-				</section>
-			<% end %>
-		</section>
-	</div>
-
-	<div class="tab-pane fade show" id="nav-drama" role="tabpanel" aria-labelledby="nav-drama-tab">
-		<section class="spotlights">
-			<% @drama_events.each do |event| %>
-				<section>
-					<%= image_tag(event.image_url.to_s, class: "image") %>
-					<div class="content">
-						<div class="inner">
-							<header class="major">
-								<h3><%= event.title %></h3>
-							</header>
-							<p>
-								<%= event.introduction.html_safe %>
-							</p>
-						</div>
-					</div>
-				</section>
-			<% end %>
-		</section>
-	</div>
-
-	<div class="tab-pane fade show" id="nav-light" role="tabpanel" aria-labelledby="nav-light-tab">
-		<section class="spotlights">
-			<% @light_events.each do |event| %>
-				<section>
-					<%= image_tag(event.image_url.to_s, class: "image") %>
-					<div class="content">
-						<div class="inner">
-							<header class="major">
-								<h3><%= event.title %></h3>
-							</header>
-							<p>
-								<%= event.introduction.html_safe %>
-							</p>
-						</div>
-					</div>
-				</section>
-			<% end %>
-		</section>
-	</div>
-	<div class="tab-pane fade show" id="nav-dance" role="tabpanel" aria-labelledby="nav-dance-tab">
-		<section class="spotlights">
-			<% @dance_events.each do |event| %>
-				<section>
-					<%= image_tag(event.image_url.to_s, class: "image") %>
-					<div class="content">
-						<div class="inner">
-							<header class="major">
-								<h3><%= event.title %></h3>
-							</header>
-							<p>
-								<%= event.introduction.html_safe %>
-							</p>
-						</div>
-					</div>
-				</section>
-			<% end %>
-		</section>
-	</div>
+	<%= render partial: "partials/event", locals: { events: @music_events, type: "music" } %>
+	<%= render partial: "partials/event", locals: { events: @drama_events, type: "drama" } %>
+	<%= render partial: "partials/event", locals: { events: @light_events, type: "light" } %>
+	<%= render partial: "partials/event", locals: { events: @dance_events, type: "dance" } %>
 </div>
