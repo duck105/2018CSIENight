@@ -17,7 +17,7 @@ class EventDashboard < Administrate::BaseDashboard
     updated_at: Field::DateTime,
     users: Field::HasMany,
     order: Field::Number,
-    category: Field::String,
+    category: Field::Select.with_options(collection: ["歌", "舞", "劇","光"])
   }.freeze
 
   # COLLECTION_ATTRIBUTES

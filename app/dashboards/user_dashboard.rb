@@ -23,7 +23,7 @@ class UserDashboard < Administrate::BaseDashboard
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     motto: Field::Text,
-    role: Field::String,
+    role: Field::Select.with_options(collection: ["admin", "leader", "normal"]),
     jobs: Field::Text,
     department: Field::BelongsTo,
     avatar: ImageField,
