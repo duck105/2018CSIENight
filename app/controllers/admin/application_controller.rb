@@ -6,7 +6,6 @@
 # you're free to overwrite the RESTful controller actions.
 module Admin
   class ApplicationController < Administrate::ApplicationController
-    before_action :authenticate_user!
     before_action :authenticate_admin
 
     def raise_404
@@ -16,10 +15,13 @@ module Admin
     def authenticate_admin
       if Rails.env.development?
         # nothing  
-      elsif current_user and current_user.is_admin?
-        # nothing
       else 
-        raise_404
+        authenticate_user!
+        if current_user and current_user.is_admin?
+          # nothing
+        else 
+          raise_404
+        end
       end
     end
     # Override this value to specify the number of elements to display at a time
