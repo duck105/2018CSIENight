@@ -15,7 +15,9 @@ class EventDashboard < Administrate::BaseDashboard
     image: ImageField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    users: Field::HasMany
+    users: Field::HasMany,
+    order: Field::Number,
+    category: Field::String,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -26,7 +28,7 @@ class EventDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :id,
     :title,
-    :schedule,
+    :category,
     :image,
   ].freeze
 
@@ -39,6 +41,8 @@ class EventDashboard < Administrate::BaseDashboard
     :introduction,
     :image,
     :users,
+    :order,
+    :category,
     :created_at,
     :updated_at,
   ].freeze
@@ -51,6 +55,8 @@ class EventDashboard < Administrate::BaseDashboard
     :schedule,
     :introduction,
     :image,
+    :order,
+    :category,
     :users
   ].freeze
 
