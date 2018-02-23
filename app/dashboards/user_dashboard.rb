@@ -26,7 +26,8 @@ class UserDashboard < Administrate::BaseDashboard
     role: Field::String,
     jobs: Field::Text,
     department: Field::BelongsTo,
-    avatar: ImageField
+    avatar: ImageField,
+    events: Field::HasMany,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -48,6 +49,7 @@ class UserDashboard < Administrate::BaseDashboard
     :id,
     :name,
     :department,
+    :events,
     :role,
     :jobs,
     :motto,
@@ -67,6 +69,7 @@ class UserDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :name,
     :department,
+    :events,
     :role,
     :jobs,
     :motto,

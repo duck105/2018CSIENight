@@ -15,6 +15,7 @@ class EventDashboard < Administrate::BaseDashboard
     image: ImageField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    users: Field::HasMany
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -37,6 +38,7 @@ class EventDashboard < Administrate::BaseDashboard
     :schedule,
     :introduction,
     :image,
+    :users,
     :created_at,
     :updated_at,
   ].freeze
@@ -49,6 +51,7 @@ class EventDashboard < Administrate::BaseDashboard
     :schedule,
     :introduction,
     :image,
+    :users
   ].freeze
 
   # Overwrite this method to customize how events are displayed
