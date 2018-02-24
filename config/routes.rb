@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'pages#index'
-  get 'events', to: 'pages#event'
-  get 'workers', to: 'pages#worker'
-  get 'sponsors', to: 'pages#sponsor'
+  resources :events, only: [:index]
+  resources :workers, only: [:index]
+  resources :sponsors, only: [:index]
 end
