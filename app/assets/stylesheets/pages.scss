@@ -31,7 +31,7 @@ p{
 			border-top: 0 !important;
 		}
 
-		.evt_tabpanel > .nav_section {
+		.evt_tabpanel > .evt_nav_section {
 			display: -moz-flex;
 			display: -webkit-flex;
 			display: -ms-flex;
@@ -45,7 +45,7 @@ p{
 			/* background-color: #4488FF; */
 		}
 
-			.evt_tabpanel > .nav_section > .evt_img {
+			.evt_tabpanel > .evt_nav_section > .evt_img {
 				background-position: center center;
 				background-size: cover;
 				border-radius: 0;
@@ -54,7 +54,7 @@ p{
 				width: 30%;
 			}
 
-			.evt_tabpanel > .nav_section > .evt_img img {
+			.evt_tabpanel > .evt_nav_section > .evt_img img {
 				height: 400px;
 				width: auto;
 				max-width: 500px;
@@ -62,7 +62,7 @@ p{
 				display: block;
 			}
 
-			.evt_tabpanel > .nav_section > .evt_img:before {
+			.evt_tabpanel > .evt_nav_section > .evt_img:before {
 				background: rgba(36, 41, 67, 0.9);
 				content: '';
 				display: block;
@@ -74,7 +74,7 @@ p{
 				width: 100%;
 			}
 
-			.evt_tabpanel > .nav_section > .evt_content {
+			.evt_tabpanel > .evt_nav_section > .evt_content {
 				display: -moz-flex;
 				display: -webkit-flex;
 				display: -ms-flex;
@@ -95,13 +95,13 @@ p{
 				width: 70%;
 			}
 
-			.evt_tabpanel > .nav_section > .evt_content > .evt_inner {
+			.evt_tabpanel > .evt_nav_section > .evt_content > .evt_inner {
 				margin: 0 auto;
 				max-width: 100%;
 				width: 65em;
 			}
 
-			.evt_tabpanel > .nav_section:nth-child(2n) {
+			.evt_tabpanel > .evt_nav_section:nth-child(2n) {
 				-moz-flex-direction: row-reverse;
 				-webkit-flex-direction: row-reverse;
 				-ms-flex-direction: row-reverse;
@@ -111,7 +111,7 @@ p{
 				/* background-color: #6699FF; */
 			}
 
-			.evt_tabpanel > .nav_section:nth-child(2n) > .evt_content {
+			.evt_tabpanel > .evt_nav_section:nth-child(2n) > .evt_content {
 				-moz-align-items: -moz-flex-end;
 				-webkit-align-items: -webkit-flex-end;
 				-ms-align-items: -ms-flex-end;
@@ -120,11 +120,11 @@ p{
 
 		@media screen and (max-width: 1680px) {
 
-			.evt_tabpanel > .nav_section > .evt_img {
+			.evt_tabpanel > .evt_nav_section > .evt_img {
 				width: 40%;
 			}
 
-			.evt_tabpanel > .nav_section > .evt_content {
+			.evt_tabpanel > .evt_nav_section > .evt_content {
 				width: 60%;
 			}
 
@@ -132,11 +132,11 @@ p{
 
 		@media screen and (max-width: 1280px) {
 
-			.evt_tabpanel > .nav_section > .evt_img {
+			.evt_tabpanel > .evt_nav_section > .evt_img {
 				width: 45%;
 			}
 
-			.evt_tabpanel > .nav_section > .evt_content {
+			.evt_tabpanel > .evt_nav_section > .evt_content {
 				width: 55%;
 			}
 
@@ -144,15 +144,15 @@ p{
 
 		@media screen and (max-width: 980px) {
 
-			.evt_tabpanel > .nav_section {
+			.evt_tabpanel > .evt_nav_section {
 				display: block;
 			}
 
-				.evt_tabpanel > .nav_section > .evt_img {
+				.evt_tabpanel > .evt_nav_section > .evt_img {
 					width: 100%;
 				}
 
-				.evt_tabpanel > .nav_section > .evt_content {
+				.evt_tabpanel > .evt_nav_section > .evt_content {
 					padding: 4em 3em 2em 3em ;
 					width: 100%;
 				}
@@ -161,7 +161,7 @@ p{
 
 		@media screen and (max-width: 736px) {
 
-			.evt_tabpanel > .nav_section > .evt_content {
+			.evt_tabpanel > .evt_nav_section > .evt_content {
 				padding: 3em 1.5em 1em 1.5em ;
 			}
 
