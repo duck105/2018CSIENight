@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :users
     resources :departments
     resources :banners
+    resources :sponsors
     root to: "events#index"
   end
 
@@ -13,4 +14,5 @@ Rails.application.routes.draw do
   root to: 'pages#index'
   get 'events', to: 'pages#event'
   get 'workers', to: 'pages#worker'
+  get 'sponsors', to: 'pages#sponsor'
 end
