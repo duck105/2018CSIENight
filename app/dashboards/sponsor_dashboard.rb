@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class SponserDashboard < Administrate::BaseDashboard
+class SponsorDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -11,7 +11,7 @@ class SponserDashboard < Administrate::BaseDashboard
     id: Field::Number,
     donate: Field::Number,
     name: Field::String,
-    picture: Field::String,
+    picture: ImageField,
     body: Field::Text,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -37,6 +37,7 @@ class SponserDashboard < Administrate::BaseDashboard
     :donate,
     :created_at,
     :updated_at,
+    :picture
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -47,7 +48,6 @@ class SponserDashboard < Administrate::BaseDashboard
     :donate,
     :picture, 
     :body, 
-
   ].freeze
 
   # Overwrite this method to customize how events are displayed

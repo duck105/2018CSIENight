@@ -6,12 +6,12 @@ Rails.application.routes.draw do
     resources :users
     resources :departments
     resources :banners
-    resources :sponsers
+    resources :sponsors
     root to: "events#index"
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'pages#index'
   get 'events', to: 'pages#event'
-  get 'sponsers', to: 'pages#sponser'
+  get 'sponsors', to: 'pages#sponsor'
 end
