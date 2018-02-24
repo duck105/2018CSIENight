@@ -17,8 +17,9 @@ p{
 	font-size: 16px;
 }
 
-/* Test_nav */
+/* nav-tabs */
 	.nav-tabs {
+		font-size: 20px;
 	}
 
 /* Spotlights */
@@ -30,7 +31,7 @@ p{
 			border-top: 0 !important;
 		}
 
-		.spotlights > section {
+		.spotlights > .nav_section {
 			display: -moz-flex;
 			display: -webkit-flex;
 			display: -ms-flex;
@@ -44,7 +45,7 @@ p{
 			/* background-color: #4488FF; */
 		}
 
-			.spotlights > section > .image {
+			.spotlights > .nav_section > .evt_img {
 				background-position: center center;
 				background-size: cover;
 				border-radius: 0;
@@ -53,7 +54,7 @@ p{
 				width: 30%;
 			}
 
-			.spotlights > section > .image img {
+			.spotlights > .nav_section > .evt_img img {
 				height: 400px;
 				width: auto;
 				max-width: 500px;
@@ -61,7 +62,7 @@ p{
 				display: block;
 			}
 
-			.spotlights > section > .image:before {
+			.spotlights > .nav_section > .evt_img:before {
 				background: rgba(36, 41, 67, 0.9);
 				content: '';
 				display: block;
@@ -73,7 +74,7 @@ p{
 				width: 100%;
 			}
 
-			.spotlights > section > .content {
+			.spotlights > .nav_section > .evt_content {
 				display: -moz-flex;
 				display: -webkit-flex;
 				display: -ms-flex;
@@ -94,13 +95,13 @@ p{
 				width: 70%;
 			}
 
-			.spotlights > section > .content > .inner {
+			.spotlights > .nav_section > .evt_content > .evt_inner {
 				margin: 0 auto;
 				max-width: 100%;
 				width: 65em;
 			}
 
-			.spotlights > section:nth-child(2n) {
+			.spotlights > .nav_section:nth-child(2n) {
 				-moz-flex-direction: row-reverse;
 				-webkit-flex-direction: row-reverse;
 				-ms-flex-direction: row-reverse;
@@ -110,7 +111,7 @@ p{
 				/* background-color: #6699FF; */
 			}
 
-			.spotlights > section:nth-child(2n) > .content {
+			.spotlights > .nav_section:nth-child(2n) > .evt_content {
 				-moz-align-items: -moz-flex-end;
 				-webkit-align-items: -webkit-flex-end;
 				-ms-align-items: -ms-flex-end;
@@ -119,11 +120,11 @@ p{
 
 		@media screen and (max-width: 1680px) {
 
-			.spotlights > section > .image {
+			.spotlights > .nav_section > .evt_img {
 				width: 40%;
 			}
 
-			.spotlights > section > .content {
+			.spotlights > .nav_section > .evt_content {
 				width: 60%;
 			}
 
@@ -131,11 +132,11 @@ p{
 
 		@media screen and (max-width: 1280px) {
 
-			.spotlights > section > .image {
+			.spotlights > .nav_section > .evt_img {
 				width: 45%;
 			}
 
-			.spotlights > section > .content {
+			.spotlights > .nav_section > .evt_content {
 				width: 55%;
 			}
 
@@ -143,15 +144,15 @@ p{
 
 		@media screen and (max-width: 980px) {
 
-			.spotlights > section {
+			.spotlights > .nav_section {
 				display: block;
 			}
 
-				.spotlights > section > .image {
+				.spotlights > .nav_section > .evt_img {
 					width: 100%;
 				}
 
-				.spotlights > section > .content {
+				.spotlights > .nav_section > .evt_content {
 					padding: 4em 3em 2em 3em ;
 					width: 100%;
 				}
@@ -160,24 +161,26 @@ p{
 
 		@media screen and (max-width: 736px) {
 
-			.spotlights > section > .content {
+			.spotlights > .nav_section > .evt_content {
 				padding: 3em 1.5em 1em 1.5em ;
 			}
 
 		}
 
-/* Image */
-	.image {
+/* evt_img */
+	.evt_img {
 		height: 400px;
 		width: auto;
 		max-width: 500px;
 	}
 		@media screen and (max-width: 736px) {
-			.image{
+			.evt_img{
 				height: auto;
 				max-width: 736px;
 			}
 		}
-/* end of event.css */// Place all the styles related to the pages controller here.
+/* end of event.css */
+
+// Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
