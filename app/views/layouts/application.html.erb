@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CSIENight2018</title>
+    <title>mo shíorghrá - Night of CSIE</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   </head>
 
   <body>
-    <div class="container-fluid">
-      <%= render "partials/navbar" %>
-      <%= yield %>
-    </div>
+    <%= render "partials/navbar" %>
+    <%= yield %>
   </body>
   <%= render "partials/footer" %>
+  <script src="js/smooth-scrolling.js"></script>
+  <script src="js/jquery.easing.min.js"></script>
 </html>
+
+
+
+    
