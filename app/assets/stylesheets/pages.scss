@@ -1,183 +1,190 @@
-// Place all the styles related to the pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-/* start of event.css */
-* {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-	color: #000000;
+.masthead {
+  min-height: 30rem;
+  position: relative;
+  display: table;
+  width: 100%;
+  height: auto;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/cover.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-p{
-	font-size: 16px;
+.table {
+    border-width: 0rem;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* Test_nav */
-	.nav-tabs {
-	}
+.mid-col {
+    text-align: center;
+}
 
-/* Spotlights */
-	.spotlights {
-		border-top: 0 !important;
-	}
+.right-col {
+    text-align: right;
+}
 
-		.spotlights + * {
-			border-top: 0 !important;
-		}
+div.container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+}
 
-		.spotlights > section {
-			display: -moz-flex;
-			display: -webkit-flex;
-			display: -ms-flex;
-			display: flex;
-			-moz-flex-direction: row;
-			-webkit-flex-direction: row;
-			-ms-flex-direction: row;
-			flex-direction: row;
-			/* background-color: #2e3450; V1(original) */
-			background-color: #d9d9d9; /* Light Gray */
-			/* background-color: #4488FF; */
-		}
+section#performance {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+}
 
-			.spotlights > section > .image {
-				background-position: center center;
-				background-size: cover;
-				border-radius: 0;
-				display: block;
-				position: relative;
-				width: 30%;
-			}
+.portfolio-item {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-			.spotlights > section > .image img {
-				height: 400px;
-				width: auto;
-				max-width: 500px;
-				border-radius: 0;
-				display: block;
-			}
+.portfolio-item .caption {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(33, 37, 41, 0.2);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  -webkit-transition: -webkit-clip-path 0.25s ease-out, background-color 0.7s;
+  -webkit-clip-path: inset(0px);
+  clip-path: inset(0px);
+}
 
-			.spotlights > section > .image:before {
-				background: rgba(36, 41, 67, 0.9);
-				content: '';
-				display: block;
-				height: 100%;
-				left: 0;
-				opacity: 0;
-				position: absolute;
-				top: 0;
-				width: 100%;
-			}
+.portfolio-item .caption .caption-content img {
+    margin-bottom: 1rem;
+}
 
-			.spotlights > section > .content {
-				display: -moz-flex;
-				display: -webkit-flex;
-				display: -ms-flex;
-				display: flex;
-				-moz-flex-direction: column;
-				-webkit-flex-direction: column;
-				-ms-flex-direction: column;
-				flex-direction: column;
-				-moz-justify-content: center;
-				-webkit-justify-content: center;
-				-ms-justify-content: center;
-				justify-content: center;
-				-moz-align-items: center;
-				-webkit-align-items: center;
-				-ms-align-items: center;
-				align-items: center;
-				padding: 2em 3em 0.1em 3em ;
-				width: 70%;
-			}
+.portfolio-item .caption .caption-content h2 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
 
-			.spotlights > section > .content > .inner {
-				margin: 0 auto;
-				max-width: 100%;
-				width: 65em;
-			}
+.portfolio-item .caption .caption-content p {
+  font-weight: 300;
+  font-size: 1.2rem;
+}
 
-			.spotlights > section:nth-child(2n) {
-				-moz-flex-direction: row-reverse;
-				-webkit-flex-direction: row-reverse;
-				-ms-flex-direction: row-reverse;
-				flex-direction: row-reverse;
-				background-color: #e6e6e6; /* White */
-				/* background-color: #333856; V1(original) */
-				/* background-color: #6699FF; */
-			}
+  .portfolio-item .caption .caption-content {
+    transition: opacity 0.25s;
+  color: #fff;
+  margin: auto 2rem 2rem;
+  margin-top: 2.2rem;
+  }
+  .portfolio-item img {
+    -webkit-transition: -webkit-clip-path 0.25s ease-out;
+    -webkit-clip-path: inset(-1px);
+    clip-path: inset(-1px);
+  }
+  .portfolio-item:hover img {
+    -webkit-clip-path: inset(1rem);
+    clip-path: inset(1rem);
+  }
+  .portfolio-item:hover .caption {
+      background-color: rgba(0, 192, 204, 0.9);
+    -webkit-clip-path: inset(1rem);
+    clip-path: inset(1rem);
+  }
+  .caption-content img{
+    -webkit-clip-path: inset(0rem) !important;
+    clip-path: inset(0rem) !important;
+  }
+  .caption-content:hover img{
+    -webkit-clip-path: inset(0rem) !important;
+    clip-path: inset(0rem) !important;
+  }
 
-			.spotlights > section:nth-child(2n) > .content {
-				-moz-align-items: -moz-flex-end;
-				-webkit-align-items: -webkit-flex-end;
-				-ms-align-items: -ms-flex-end;
-				align-items: flex-end;
-			}
+/*set table padding*/
+@media (max-width: 400px) {
+    div.table-container {
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+    }
+}
 
-		@media screen and (max-width: 1680px) {
+/*performance small font visibility*/
+@media (max-width: 420px) {
+    .mb-0 {
+	visibility: hidden;
+    }
+    .display-4 {
+	font-size: 2.2rem;
+    }
+}
 
-			.spotlights > section > .image {
-				width: 40%;
-			}
+/*white title text font size change*/
+@media (max-width: 350px) {
+    div.container {
+	padding-top: 0rem;
+	padding-bottom: 0rem;
+	padding-right: 1rem;
+	padding-left: 1rem;
+    }
+  .portfolio-item .caption .caption-content {
+    margin-top: 2rem;
+  }
+  .portfolio-item .caption .caption-content img{
+      max-width: 65px;
+  }
+  .portfolio-item:hover img {
+    -webkit-clip-path: inset(0.7rem);
+    clip-path: inset(0.7rem);
+  }
+  .portfolio-item:hover .caption {
+    -webkit-clip-path: inset(0.7rem);
+    clip-path: inset(0.7rem);
+  }
+}
 
-			.spotlights > section > .content {
-				width: 60%;
-			}
+@media (min-width: 490px) {
+  .portfolio-item .caption .caption-content {
+    margin-left: 3rem;
+    margin-right: 5rem;
+    margin-top: 4rem;
+    margin-bottom: 5rem;
+  }
+}
 
-		}
+@media (min-width: 767px) {
+  .portfolio-item .caption .caption-content {
+    margin-top: 12rem;
+  }
+}
 
-		@media screen and (max-width: 1280px) {
-
-			.spotlights > section > .image {
-				width: 45%;
-			}
-
-			.spotlights > section > .content {
-				width: 55%;
-			}
-
-		}
-
-		@media screen and (max-width: 980px) {
-
-			.spotlights > section {
-				display: block;
-			}
-
-				.spotlights > section > .image {
-					width: 100%;
-				}
-
-				.spotlights > section > .content {
-					padding: 4em 3em 2em 3em ;
-					width: 100%;
-				}
-
-		}
-
-		@media screen and (max-width: 736px) {
-
-			.spotlights > section > .content {
-				padding: 3em 1.5em 1em 1.5em ;
-			}
-
-		}
-
-/* Image */
-	.image {
-		height: 400px;
-		width: auto;
-		max-width: 500px;
-	}
-		@media screen and (max-width: 736px) {
-			.image{
-				height: auto;
-				max-width: 736px;
-			}
-		}
-/* end of event.css */// Place all the styles related to the pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/*two columns*/
+@media (min-width: 992px) {
+    section#performance {
+	padding-top: 8rem;
+	padding-bottom: 8rem;
+    }
+  .portfolio-item {
+    max-width: none;
+    margin: 0;
+  }
+  .portfolio-item .caption .caption-content {
+    margin-left: 5rem;
+    margin-right: 5rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+  }
+  .portfolio-item:hover img {
+    -webkit-clip-path: inset(2rem);
+    clip-path: inset(2rem);
+  }
+  .portfolio-item:hover .caption {
+    -webkit-clip-path: inset(2rem);
+    clip-path: inset(2rem);
+  }
+}
