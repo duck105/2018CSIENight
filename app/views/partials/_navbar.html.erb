@@ -1,28 +1,22 @@
 <!-- Navigation Bar -->
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" id="navbarExpand">
-  <a class="navbar-brand" href="#top">mo shíorghrá</a>
+  <%= link_to("mo shíorghrá", root_path, class: "navbar-brand") =%>
   <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarCollapse">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#about">About</a>
+        <%= link_to("Performance", events_path + "#music", class: "nav-link", :data => { :reload => true } ) =%>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#performance">Performance</a>
+        <%= link_to("Contributers", workers_path, class: "nav-link") =%>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#schedule">Schedule</a>
+        <%= link_to("Sponsors", sponsors_path, class: "nav-link") =%>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Contributers</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Sponsors</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="https://www.facebook.com/2017%E8%B3%87%E8%A8%8A%E4%B9%8B%E5%A4%9C-%E5%8D%88%E5%A4%9C%E5%A4%A2%E8%BF%B4-390769774648470/" target="_blank">Facebook</a>
+        <%= link_to("Facebook", "https://www.facebook.com/2017%E8%B3%87%E8%A8%8A%E4%B9%8B%E5%A4%9C-%E5%8D%88%E5%A4%9C%E5%A4%A2%E8%BF%B4-390769774648470/", class: "nav-link") =%>
       </li>
     </ul>
   </div>

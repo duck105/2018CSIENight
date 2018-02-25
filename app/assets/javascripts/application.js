@@ -41,3 +41,11 @@ $(function(){
 	});
 });
 // end of event.js
+
+// to deal with reload problem of nab-bar
+$(function(){
+	$('a[data-reload="true"').on('click', function(e) {
+		window.location = $(e.target).attr('href');
+		window.location.reload(true);
+	});
+});
