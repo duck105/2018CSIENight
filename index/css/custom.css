@@ -4,7 +4,7 @@ body {
 }
 
 body {
-    font-family: "微軟正黑體","Microsoft JhengHei","文泉驛正黑","WenQuanYi Zen Hei","儷黑 Pro","LiHei Pro","標楷體",DFKai-SB;
+    font-family: "Heiti TC", "微軟正黑體","Microsoft JhengHei","文泉驛正黑","WenQuanYi Zen Hei","儷黑 Pro","LiHei Pro","標楷體",DFKai-SB;
 }
 
 a {
@@ -60,7 +60,7 @@ section#performance {
 }
 
 #performance-title {
-    margin-bottom: 2rem;
+    margin-bottom: 5rem;
 }
 
 .portfolio-item {
@@ -115,7 +115,7 @@ section#performance {
     clip-path: inset(1rem);
   }
   .portfolio-item:hover .caption {
-      background-color: rgba(0, 192, 204, 0.9);
+      background-color: rgba(234, 153, 68, 0.9);
     -webkit-clip-path: inset(1rem);
     clip-path: inset(1rem);
   }
@@ -143,6 +143,9 @@ section#performance {
     }
     .display-4 {
 	font-size: 2.2rem;
+    }
+    #performance-title {
+	margin-bottom: 2rem;
     }
 }
 
@@ -187,10 +190,6 @@ section#performance {
 
 /*two columns*/
 @media (min-width: 992px) {
-    section#performance {
-	padding-top: 8rem;
-	padding-bottom: 8rem;
-    }
   .portfolio-item {
     max-width: none;
     margin: 0;
