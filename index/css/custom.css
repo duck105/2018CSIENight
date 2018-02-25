@@ -22,9 +22,9 @@ a:hover {
   display: table;
   width: 100%;
   height: auto;
-  padding-top: 8rem;
-  padding-bottom: 8rem;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/cover.jpg");
+  padding-top: 10rem;
+  padding-bottom: 0rem;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/cover.png");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -57,6 +57,10 @@ section#performance {
     padding-bottom: 4rem;
     padding-right: 0.5rem;
     padding-left: 0.5rem;
+}
+
+#performance-title {
+    margin-bottom: 2rem;
 }
 
 .portfolio-item {
