@@ -3,9 +3,8 @@ body {
   padding-top: 3.4rem;
   font-family: "Heiti TC", "微軟正黑體", "Microsoft JhengHei","文泉驛正黑","WenQuanYi Zen Hei","儷黑 Pro","LiHei Pro","標楷體",DFKai-SB;
 }
-a {
-  color: #000;
-}
+
+
 a:hover {
   color: #007bff;
   text-decoration:none;
@@ -204,6 +203,20 @@ section#performance {
     clip-path: inset(2rem);
   }
 }
+
+.footer {
+  bottom: 0;
+  width: 100%;
+  line-height: 60px;
+}
+
+.bg-footer-color {
+  background-color: #f0f0f0;
+}
+
+.footer-content {
+}
+
 
 /**
  * Animations
