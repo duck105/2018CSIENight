@@ -1,5 +1,4 @@
 body {
-  min-height: 75rem;
   padding-top: 3.4rem;
   font-family: "Heiti TC", "微軟正黑體", "Microsoft JhengHei","文泉驛正黑","WenQuanYi Zen Hei","儷黑 Pro","LiHei Pro","標楷體",DFKai-SB;
 }
@@ -207,7 +206,6 @@ section#performance {
 .footer {
   bottom: 0;
   width: 100%;
-  line-height: 60px;
 }
 
 .bg-footer-color {
@@ -215,6 +213,10 @@ section#performance {
 }
 
 .footer-content {
+  text-align: center;
+  line-height: 30px;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 
 
