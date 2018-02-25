@@ -14,8 +14,17 @@
     <%= yield %>
   </body>
   <%= render "partials/footer" %>
-  <script src="js/smooth-scrolling.js"></script>
   <script src="js/jquery.easing.min.js"></script>
+  <script src="js/smooth-scrolling.js"></script>
+  <script src="js/ScrollTrigger.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      var trigger = new ScrollTrigger();
+    });
+  </script>
+  <script>
+    $('body').bind('touchstart',function(){});
+  </script>
 </html>
 
 
