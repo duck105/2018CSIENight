@@ -11,7 +11,7 @@ class EventDashboard < Administrate::BaseDashboard
     id: Field::Number,
     title: Field::String,
     schedule: Field::String,
-    introduction: CkEditorField,
+    introduction: Field::Text,
     image: ImageField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
