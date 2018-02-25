@@ -6,7 +6,7 @@
         <% @events.each do |event| %>
           <div class="carousel-item <% if event == @events.first %><%= "active" %><% end %>">
           <button type="button" class="btn btn-link text-left" data-toggle="collapse" data-target="#d<%= event.id %>" aria-expanded="false" aria-controls="d<% event.id %>">
-          <img class="d-block h-20" src="<%= image_url(event.image) %>" alt="召部照">
+          <img class="d-block h-20" src="<%= image_url(event.image) %>" alt="<%= event.title %>照片">
           </button>
         </div>
         <% end %>
@@ -25,18 +25,26 @@
   <div id="work">
   <% @departments.each do |department| %>
     <div id="C<%= department.id %>" class="card">
-      <button type="button" class="btn btn-link text-left" data-toggle="collapse" data-target="#D<%= department.id %>" aria-expanded="false" aria-controls="D<%= department.id %>">
-        <div class="card-header" id="L<%= department.id %>"> <%= department.name %> </div>
+      <button type="button" class="btn btn-link text-left collapsed" data-toggle="collapse" data-target="#D<%= department.id %>" aria-expanded="false" aria-controls="D<%= department.id %>">
+        <div class="card-header" id="L<%= department.id %>">
+          <span class="rightarrow">&#9656;&nbsp; </span>
+          <span class="downarrow">&#9662;&nbsp;</span>
+          <%= department.name %>
+        </div>
       </button>
       <div id="D<%= department.id %>" class="collapse" aria-labelledby="C<%= department.id %>">
         <div class="card-body">
           <adj>
+          <div> <div class="row">
           <% department.users.each do |user| %>
-            <button type="button" class="btn btn-outline-secondary col-3" data-toggle="modal" data-target="#M<%= user.id %>">
+            <div class="col-3">
+              <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#M<%= user.id %>">
               <img class="avatar" src="<%= image_url(user.avatar.small) %>"><br>
               <name><%= user.name %></name>
-            </button>&nbsp;&nbsp; 
+              </button>
+            </div>
           <% end %>
+          </div> </div>
           </adj>
         </div>
       </div>
@@ -47,18 +55,26 @@
   <div id="show">
   <% @events.each do |event| %>
     <div id="c<%= event.id %>" class="card">
-    <button type="button" class="btn btn-link text-left" data-toggle="collapse" data-target="#d<%= event.id %>" aria-expanded="false" aria-controls="d<%= event.id %>">
-    <div class="card-header" id="l<%= event.id %>"> <%= event.title %> </div>
+      <button type="button" class="btn btn-link text-left collapsed" data-toggle="collapse" data-target="#d<%= event.id %>" aria-expanded="false" aria-controls="d<%= event.id %>">
+        <div class="card-header" id="l<%= event.id %>">
+          <span class="rightarrow">&#9656;&nbsp; </span>
+          <span class="downarrow">&#9662;&nbsp;</span>
+          <%= event.title %>
+        </div>
       </button>
       <div id="d<%= event.id %>" class="collapse" aria-labelledby="c<%= event.id %>">
         <div class="card-body">
           <adj>
+          <div> <div class="row">
           <% event.users.each do |user| %>
-            <button type="button" class="btn btn-outline-secondary col-3" data-toggle="modal" data-target="#M<%= user.id %>">
-            <img class="avatar" src="<%= image_url(user.avatar.small) %>"><br>
-            <name><%= user.name %></name>
-            </button>&nbsp;&nbsp; 
+            <div class="col-3">
+              <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#M<%= user.id %>">
+              <img class="avatar" src="<%= image_url(user.avatar.small) %>"><br>
+              <name><%= user.name %></name>
+              </button>
+            </div>
           <% end %>
+          </div> </div>
           </adj>
         </div>
       </div>
@@ -68,78 +84,98 @@
 </div>
 <!-- for large device -->
 <div id="collapse" class="d-none d-lg-block d-xl-block large-device">
+  <center>
+    <div id="carousel" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <% @events.each do |event| %>
+          <div class="carousel-item <% if event == @events.first %><%= "active" %><% end %>">
+          <img class="d-block h-20" src="<%= image_url(event.image) %>" alt="<%= event.title %>照片">
+        </div>
+        <% end %>
+        <% @departments.each do |department| %>
+        <div class="carousel-item">
+          <img class="d-block h-20" src="<%= image_url(department.image) %>" alt="召部照">
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </center>
   <% @departments.each do |department| %>
   <div class="container">
-    <div class="row">
-      <div class="col-6 mid">
-      <img class="department_pic" src="<%= image_url(department.image) %>" alt="<%= department.name %>照片" data-position="center center"/>
-      </div>
-      <div class="col-6">
-        <div class="right">
-          <div class="rtop">
-            <h1>
-            <%= department.name %>
-            </h1>
-            <hr size="30">
+    <div class="col-12">
+      <div class="right">
+        <div class="rtop">
+          <div class="row">
+            <div class="col-12 align-self-end">
+              <h1>&nbsp;<%= department.name %><strong>&nbsp;&nbsp;&gt;&gt;</strong></h1>
+            <hr>
+            </div>
+            <!--
+            <div class="col-4">
+              <img class="department_pic" src="<%= image_url(department.image) %>" alt="<%= department.name %>照片">
+            </div>
+            -->
           </div>
-          <div class="rbtm">
-            <div class="outer">
-              <div class="content">
-                <div class="d-flex flex-wrap">
-                <% department.users.each do |user| %>
-                  <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#M<%= user.id %>">
-                    <div class="pic_wrapper">
-                      <img src="<%= image_url(user.avatar) %>" class="pic"><br/>
-                    </div>
-                    <name><%= user.name %></name>
-                  </button>
-                <% end %>
-                </div>
-                <br>
+        </div>
+        <div class="rbtm">
+          <div class="outer">
+            <div class="content">
+              <div class="d-flex flex-wrap">
+              <% department.users.each do |user| %>
+                <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#M<%= user.id %>">
+                  <div class="pic_wrapper">
+                    <img src="<%= image_url(user.avatar) %>" class="pic"><br/>
+                  </div>
+                  <name><%= user.name %></name>
+                </button>
+              <% end %>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
+     <hr size=30>
+     </div>
+   </div>
   <% end %>
 
   <% @events.each do |event| %>
   <div class="container">
-    <div class="row">
-      <div class="col-6">
-      <img class="department_pic" src="<%= image_url(event.image) %>" alt="<%= event.title %>照片" data-position="center center"/>
-      </div>
-      <div class="col-6">
-        <div class="right">
-          <div class="rtop">
-            <h1>
-            <%= event.title %>
-            </h1>
-            <hr/>
+    <div class="col-12">
+      <div class="right">
+        <div class="rtop">
+          <div class="row">
+            <div class="col-12 align-self-end">
+              <h1>&nbsp;<%= event.title %><strong>&nbsp;&nbsp;&gt;&gt;</strong></h1>
+            <hr>
+            </div>
+            <!--
+            <div class="col-4">
+              <img class="event_pic" src="<%= image_url(event.image) %>" alt="<%= event.title %>照片">
+            </div>
+            -->
           </div>
-          <div class="rbtm">
-            <div class="outer">
-              <div class="content">
-                <div class="d-flex flex-wrap">
-                <% event.users.each do |user| %>
-                  <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#M<%= user.id %>">
-                    <div class="pic_wrapper">
+        </div>
+        <div class="rbtm">
+          <div class="outer">
+            <div class="content">
+              <div class="d-flex flex-wrap">
+              <% event.users.each do |user| %>
+                <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#M<%= user.id %>">
+                  <div class="pic_wrapper">
                     <img src="<%= image_url(user.avatar) %>" class="pic"><br/>
-                    </div>
-                    <name><%= user.name %></name>
-                  </button>
-                <% end %>
-                </div>
-                <br>
+                  </div>
+                  <name><%= user.name %></name>
+                </button>
+              <% end %>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
+     <hr size=30>
+     </div>
+   </div>
   <% end %>
 </div>
 <!-- namecards -->
