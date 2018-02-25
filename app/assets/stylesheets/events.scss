@@ -1,13 +1,26 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-p { 
-  font-size: 16px;
+
+.evt_container {
+
 }
 
-/* event_nav-tabs */
-.evt_nav-tabs {
+.evt_bg-nav-bar{
+  background-color: #444a50;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+/* event_nav-bar */
+.evt_nav-bar {
   font-size: 20px;
+  padding-left: 30px;
+}
+
+.evt_nav-tabs {
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 /* evt_tabpanel */
@@ -95,8 +108,11 @@ p {
   -ms-flex-direction: row-reverse;
   flex-direction: row-reverse;
   background-color: #e6e6e6; /* White */
-  /* background-color: #333856; V1(original) */
-  /* background-color: #6699FF; */
+  padding-right: 30px;
+}
+
+.evt_tabpanel > .evt_nav_section:nth-child(2n+1) {
+  padding-left: 30px;
 }
 
 .evt_tabpanel > .evt_nav_section:nth-child(2n) > .evt_content {

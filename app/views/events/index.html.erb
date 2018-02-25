@@ -1,15 +1,22 @@
-<nav>
-  <div class="nav nav-tabs evt_nav-tabs" id="nav-tab" role="tablist">
-    <a class="nav-item nav-link active" data-toggle="tab" href="#music" role="tab" aria-controls="nav-music" aria-selected="true">歌</a>
-    <a class="nav-item nav-link" data-toggle="tab" href="#drama" role="tab" aria-controls="nav-drama" aria-selected="false">劇</a>
-    <a class="nav-item nav-link" data-toggle="tab" href="#light" role="tab" aria-controls="nav-light" aria-selected="false">光</a>
-    <a class="nav-item nav-link" data-toggle="tab" href="#dance" role="tab" aria-controls="nav-dance" aria-selected="false">舞</a>
+<div class="evt_container">
+  <div class="evt_bg-nav-bar">
+    <nav>
+      <div class="nav nav-tabs evt_nav-bar evt_bg-nav-bar" id="nav-tab" role="tablist">
+        <a class="nav-item nav-link active evt_nav-tabs" data-toggle="tab" href="#music" role="tab" aria-controls="nav-music" aria-selected="true">歌</a>
+        <a class="nav-item nav-link evt_nav-tabs" data-toggle="tab" href="#drama" role="tab" aria-controls="nav-drama" aria-selected="false">劇</a>
+        <a class="nav-item nav-link evt_nav-tabs" data-toggle="tab" href="#light" role="tab" aria-controls="nav-light" aria-selected="false">光</a>
+        <a class="nav-item nav-link evt_nav-tabs" data-toggle="tab" href="#dance" role="tab" aria-controls="nav-dance" aria-selected="false">舞</a>
+      </div>
+    </nav>
   </div>
-</nav>
-
-<div class="tab-content" id="nav-tabContent">
-  <%= render partial: "partials/event", locals: { events: @music_events, type: "music" } %>
-  <%= render partial: "partials/event", locals: { events: @drama_events, type: "drama" } %>
-  <%= render partial: "partials/event", locals: { events: @light_events, type: "light" } %>
-  <%= render partial: "partials/event", locals: { events: @dance_events, type: "dance" } %>
+  <div class="evt_tabpanel go_down_please" id="nav-tabContent">
+    <div id="music"></div>
+    <%= render partial: "partials/event", locals: { events: @music_events, type: "music" } %>
+    <div id="drama"></div>
+    <%= render partial: "partials/event", locals: { events: @drama_events, type: "drama" } %>
+    <div id="light"></div>
+    <%= render partial: "partials/event", locals: { events: @light_events, type: "light" } %>
+    <div id="dance"></div>
+    <%= render partial: "partials/event", locals: { events: @dance_events, type: "dance" } %>
+  </div>
 </div>
