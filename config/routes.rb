@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   resources :workers, only: [:index]
   resources :sponsors, only: [:index]
 
+  get 'search', to: "search#index", as: "search"
 end

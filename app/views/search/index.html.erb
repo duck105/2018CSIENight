@@ -1,0 +1,19 @@
+<% if @user.nil? %>  
+  <h2>很抱歉！2018CSIENIGHT沒有這位同學喔</h2>
+  <h3>找不到好友嘛？這裡有<%= link_to("工作人員介紹", workers_path, class: "nav-link", :data => { :reload => true } ) =%>以及<%= link_to("表演介紹", root_path(anchor: "performance"), class: "nav-link") =%>喔</h3>
+<% else %>
+  <h3><%= @user.name %></h3>   
+  <%= image_tag(@user.avatar.small) %>
+  <br>
+  部門：<%= @user.department.name %>
+  <br>
+  表演：<br>
+  <% @user.events.each do |event| %>
+    <%= event.title %> 
+    <%= event.schedule  %>
+    <br>
+  <% end %>
+  建議抵達時間<h3><%= @arrive_time %></h3>  
+  欣賞下半場表演抵達時間 <h3>18:00</h3>
+  欣賞上半場表演抵達時間 <h3>18:00</h3>
+<% end %>

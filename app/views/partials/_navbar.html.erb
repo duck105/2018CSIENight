@@ -18,6 +18,12 @@
       <li class="nav-item">
         <%= link_to("Facebook", "https://www.facebook.com/2017%E8%B3%87%E8%A8%8A%E4%B9%8B%E5%A4%9C-%E5%8D%88%E5%A4%9C%E5%A4%A2%E8%BF%B4-390769774648470/", class: "nav-link", :data => { :reload => true } ) =%>
       </li>
+      <%= form_tag search_path, method: :get do %>
+      <li class="nav-item">
+        <%= text_field_tag :name, params[:name], placeholder: "輸入姓名" %>
+        <%= submit_tag "Search", name: nil %>
+      </li>
+      <% end %>
     </ul>
   </div>
 </nav>
