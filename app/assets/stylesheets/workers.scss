@@ -1,3 +1,86 @@
 // Place all the styles related to the workers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.large-device div.right {
+	position: relative;
+	padding-top: 3%;
+	width: 100%;
+	height: 100%;
+	/*background-color: green;*/
+}
+.large-device div.rtop {
+	//height: 81.5px;
+	/*background-color: red;*/
+}
+.large-device div.rbtm {
+	//position: absolute;
+	//top: 81.5px;
+	//bottom: 0;
+	width: 100%;
+	//background-color: orange;
+}
+.large-device div.outer {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: table;
+}
+.large-device div.content {
+	display: table-cell;
+//	vertical-align: middle;
+}
+.large-device .mid{
+	justify-content: center;
+}
+
+.large-device img.department_pic {
+	margin-left: auto;
+	margin-right: auto; 
+	vertical-align: middle;
+	width: 100%;
+}
+.large-device div.pic_wrapper {
+}
+
+.large-device img.pic {
+	width: 80px;
+}
+.large-device button.btn {
+	padding: 0px;
+	font-size: 1em;
+}
+.large-device div:nth-of-type(even) .row {
+	flex-direction: row-reverse;
+
+}
+
+.small-device{
+	font-size: 30px;
+}
+.small-device .card-header{
+	font-size: 50px;
+	color: #000000;
+}
+.small-device #work .card-header{
+	background-color: #DBFFA4;
+}
+.small-device #show .card-header{
+	background-color: #f7f593;
+}
+.small-device .h-20{
+	height: 40%;
+}
+.small-device name{
+	font-size: 40px;
+}
+.small-device .avatar{
+	width: 100%;
+}
+.small-device job{
+	font-size: 50px;
+	line-height: 240px;
+}
+.small-device adj{
+	font-size: 40px;
+	line-height: 240px;
+}
