@@ -64,8 +64,8 @@ Event.create([
     category: "劇",
   },
   {
-    title: "串場劇"
-    category: "劇"
+    title: "串場劇",
+    category: "劇",
   },
   {
     title: "大ㄧ民謠",
