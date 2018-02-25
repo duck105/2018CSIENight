@@ -1,0 +1,208 @@
+body {
+  min-height: 75rem;
+  padding-top: 3.4rem;
+}
+
+body {
+    font-family: "微軟正黑體","Microsoft JhengHei","文泉驛正黑","WenQuanYi Zen Hei","儷黑 Pro","LiHei Pro","標楷體",DFKai-SB;
+}
+
+a {
+    color: #000;
+}
+
+a:hover {
+    color: #007bff;
+    text-decoration:none;
+}
+
+.masthead {
+  min-height: 30rem;
+  position: relative;
+  display: table;
+  width: 100%;
+  height: auto;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/cover.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.table {
+    border-width: 0rem;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mid-col {
+    text-align: center;
+}
+
+.right-col {
+    text-align: right;
+}
+
+div.container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+}
+
+section#performance {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+}
+
+.portfolio-item {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.portfolio-item .caption {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(33, 37, 41, 0.2);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  -webkit-transition: -webkit-clip-path 0.25s ease-out, background-color 0.7s;
+  -webkit-clip-path: inset(0px);
+  clip-path: inset(0px);
+}
+
+.portfolio-item .caption .caption-content img {
+    margin-bottom: 1rem;
+}
+
+.portfolio-item .caption .caption-content h2 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.portfolio-item .caption .caption-content p {
+  font-weight: 300;
+  font-size: 1.2rem;
+}
+
+  .portfolio-item .caption .caption-content {
+    transition: opacity 0.25s;
+  color: #fff;
+  margin: auto 2rem 2rem;
+  margin-top: 2.2rem;
+  }
+  .portfolio-item img {
+    -webkit-transition: -webkit-clip-path 0.25s ease-out;
+    -webkit-clip-path: inset(-1px);
+    clip-path: inset(-1px);
+  }
+  .portfolio-item:hover img {
+    -webkit-clip-path: inset(1rem);
+    clip-path: inset(1rem);
+  }
+  .portfolio-item:hover .caption {
+      background-color: rgba(0, 192, 204, 0.9);
+    -webkit-clip-path: inset(1rem);
+    clip-path: inset(1rem);
+  }
+  .caption-content img{
+    -webkit-clip-path: inset(0rem) !important;
+    clip-path: inset(0rem) !important;
+  }
+  .caption-content:hover img{
+    -webkit-clip-path: inset(0rem) !important;
+    clip-path: inset(0rem) !important;
+  }
+
+/*set table padding*/
+@media (max-width: 400px) {
+    div.table-container {
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+    }
+}
+
+/*performance small font visibility*/
+@media (max-width: 420px) {
+    .mb-0 {
+	visibility: hidden;
+    }
+    .display-4 {
+	font-size: 2.2rem;
+    }
+}
+
+/*white title text font size change*/
+@media (max-width: 350px) {
+    div.container {
+	padding-top: 0rem;
+	padding-bottom: 0rem;
+	padding-right: 1rem;
+	padding-left: 1rem;
+    }
+  .portfolio-item .caption .caption-content {
+    margin-top: 2rem;
+  }
+  .portfolio-item .caption .caption-content img{
+      max-width: 65px;
+  }
+  .portfolio-item:hover img {
+    -webkit-clip-path: inset(0.7rem);
+    clip-path: inset(0.7rem);
+  }
+  .portfolio-item:hover .caption {
+    -webkit-clip-path: inset(0.7rem);
+    clip-path: inset(0.7rem);
+  }
+}
+
+@media (min-width: 490px) {
+  .portfolio-item .caption .caption-content {
+    margin-left: 3rem;
+    margin-right: 5rem;
+    margin-top: 4rem;
+    margin-bottom: 5rem;
+  }
+}
+
+@media (min-width: 767px) {
+  .portfolio-item .caption .caption-content {
+    margin-top: 12rem;
+  }
+}
+
+/*two columns*/
+@media (min-width: 992px) {
+    section#performance {
+	padding-top: 8rem;
+	padding-bottom: 8rem;
+    }
+  .portfolio-item {
+    max-width: none;
+    margin: 0;
+  }
+  .portfolio-item .caption .caption-content {
+    margin-left: 5rem;
+    margin-right: 5rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+  }
+  .portfolio-item:hover img {
+    -webkit-clip-path: inset(2rem);
+    clip-path: inset(2rem);
+  }
+  .portfolio-item:hover .caption {
+    -webkit-clip-path: inset(2rem);
+    clip-path: inset(2rem);
+  }
+}
