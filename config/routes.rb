@@ -16,5 +16,4 @@ Rails.application.routes.draw do
   resources :workers, only: [:index]
   resources :sponsors, only: [:index]
 
-  get 'events', to: 'performances'
 end

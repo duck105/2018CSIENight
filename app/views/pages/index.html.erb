@@ -48,20 +48,23 @@
       id="performance-title">Performance
     </h1>
     <div class="row no-gutters">
+
       <div class="col-lg-6">
-        <a class="portfolio-item" href="#">
-          <span class="caption">
-            <span class="caption-content">
-              <!-- Song-->
-              <img src="img/performance/white-song.png" alt="">
-              <p class="mb-0">大一民謠|大二民謠|大三民謠|大四民謠|阿卡貝拉</p>
+        <%= link_to(events_path(anchor: "music"), class: "portfolio-item", :data => { :reload => true } ) do %>
+            <span class="caption">
+              <span class="caption-content">
+                <!-- Song-->
+                <img src="img/performance/white-song.png" alt="">
+                <p class="mb-0">大一民謠|大二民謠|大三民謠|大四民謠|阿卡貝拉</p>
+              </span>
             </span>
-          </span>
-          <img class="img-fluid" src="img/performance/img-song.jpg" alt="">
-        </a>
+            <img class="img-fluid" src="img/performance/img-song.jpg" alt="">
+
+        <% end %>
       </div>
+
       <div class="col-lg-6">
-        <a class="portfolio-item" href="#">
+        <%= link_to(events_path(anchor: "dance"), class: "portfolio-item", :data => { :reload => true } ) do %>
           <span class="caption">
             <span class="caption-content">
               <!-- Dance-->
@@ -70,10 +73,11 @@
             </span>
           </span>
           <img class="img-fluid" src="img/performance/img-dance.jpg" alt="">
-        </a>
+        <% end %>
       </div>
+
       <div class="col-lg-6">
-        <a class="portfolio-item" href="#">
+        <%= link_to(events_path(anchor: "drama"), class: "portfolio-item", :data => { :reload => true } ) do %>
           <span class="caption">
             <span class="caption-content">
               <!-- Drama-->
@@ -82,10 +86,11 @@
             </span>
           </span>
           <img class="img-fluid" src="img/performance/img-drama.jpg" alt="">
-        </a>
+        <% end %>
       </div>
+
       <div class="col-lg-6">
-        <a class="portfolio-item" href="#">
+        <%= link_to(events_path(anchor: "light"), class: "portfolio-item", :data => { :reload => true } ) do %>
           <span class="caption">
             <span class="caption-content">
               <!-- Light-->
@@ -94,7 +99,7 @@
             </span>
           </span>
           <img class="img-fluid" src="img/performance/img-light.jpg" alt="">
-        </a>
+        <% end %>
       </div>
     </div>
   </div>
