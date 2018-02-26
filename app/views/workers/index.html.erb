@@ -1,21 +1,219 @@
-<h1>工作人員</h1>
-<% @departments.each do |department| %>
-  <h2><%= department.name %></h2>   
-  <br>
-  <% department.users.each do |user| %>
-    <h3><%= user.name %></h3>   
-    <%= image_tag(user.avatar.small) %>
-    <p><%= user.motto %></p> 
+<!-- for small device -->
+<div class="d-lg-none d-xl-none small-device">
+  <center>
+    <div id="carousel" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <% @events.each do |event| %>
+          <div class="carousel-item <% if event == @events.first %><%= "active" %><% end %>">
+          <button type="button" class="btn btn-link text-left" data-toggle="collapse" data-target="#d<%= event.id %>" aria-expanded="false" aria-controls="d<% event.id %>">
+          <img class="d-block h-20" src="<%= image_url(event.image) %>" alt="<%= event.title %>照片">
+          </button>
+        </div>
+        <% end %>
+        <% @departments.each do |department| %>
+        <div class="carousel-item">
+          <button type="button" class="btn btn-link text-left" data-toggle="collapse" data-target="#D<%= department.id %>" aria-expanded="false" aria-controls="D<% department.id %>">
+          <button type="button" class="btn btn-link text-left" data-toggle="collapse" data-target="#D<%= department.id %>" aria-expanded="false" aria-controls="D<% department.id %>">
+          <img class="d-block h-20" src="<%= image_url(department.image) %>" alt="召部照">
+          </button>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </center>
+  
+  <div id="work">
+  <% @departments.each do |department| %>
+    <div id="C<%= department.id %>" class="card">
+      <button type="button" class="btn btn-link text-left collapsed" data-toggle="collapse" data-target="#D<%= department.id %>" aria-expanded="false" aria-controls="D<%= department.id %>">
+        <div class="card-header" id="L<%= department.id %>">
+          <span class="rightarrow">&#9656;&nbsp; </span>
+          <span class="downarrow">&#9662;&nbsp;</span>
+          <%= department.name %>
+        </div>
+      </button>
+      <div id="D<%= department.id %>" class="collapse" aria-labelledby="C<%= department.id %>">
+        <div class="card-body">
+          <adj>
+          <div> <div class="row">
+          <% department.users.each do |user| %>
+            <div class="col-3">
+              <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#M<%= user.id %>">
+              <img class="avatar" src="<%= image_url(user.avatar.small) %>"><br>
+              <name><%= user.name %></name>
+              </button>
+            </div>
+          <% end %>
+          </div> </div>
+          </adj>
+        </div>
+      </div>
+    </div>
   <% end %>
-<% end %>
-
-
-<h1>表演人員</h1>
-<% @events.each do |event| %>
-  <h2><%= event.title %></h2>
-  <% event.users.each do |user| %>
-    <h3><%= user.name %></h3>   
-    <%= image_tag(user.avatar.small) %>
-    <p><%= user.motto %></p> 
+  </div>
+  
+  <div id="show">
+  <% @events.each do |event| %>
+    <div id="c<%= event.id %>" class="card">
+      <button type="button" class="btn btn-link text-left collapsed" data-toggle="collapse" data-target="#d<%= event.id %>" aria-expanded="false" aria-controls="d<%= event.id %>">
+        <div class="card-header" id="l<%= event.id %>">
+          <span class="rightarrow">&#9656;&nbsp; </span>
+          <span class="downarrow">&#9662;&nbsp;</span>
+          <%= event.title %>
+        </div>
+      </button>
+      <div id="d<%= event.id %>" class="collapse" aria-labelledby="c<%= event.id %>">
+        <div class="card-body">
+          <adj>
+          <div> <div class="row">
+          <% event.users.each do |user| %>
+            <div class="col-3">
+              <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#M<%= user.id %>">
+              <img class="avatar" src="<%= image_url(user.avatar.small) %>"><br>
+              <name><%= user.name %></name>
+              </button>
+            </div>
+          <% end %>
+          </div> </div>
+          </adj>
+        </div>
+      </div>
+    </div>
   <% end %>
+  </div>
+</div>
+<!-- for large device -->
+<div id="collapse" class="d-none d-lg-block d-xl-block large-device">
+  <center>
+    <div id="carousel" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <% @events.each do |event| %>
+          <div class="carousel-item <% if event == @events.first %><%= "active" %><% end %>">
+          <img class="d-block h-20" src="<%= image_url(event.image) %>" alt="<%= event.title %>照片">
+        </div>
+        <% end %>
+        <% @departments.each do |department| %>
+        <div class="carousel-item">
+          <img class="d-block h-20" src="<%= image_url(department.image) %>" alt="召部照">
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </center>
+  <% @departments.each do |department| %>
+  <div class="container">
+    <div class="col-12">
+      <div class="right">
+        <div class="rtop">
+          <div class="row">
+            <div class="col-12 align-self-end">
+              <h1>&nbsp;<%= department.name %><strong>&nbsp;&nbsp;&gt;&gt;</strong></h1>
+            <hr>
+            </div>
+            <!--
+            <div class="col-4">
+              <img class="department_pic" src="<%= image_url(department.image) %>" alt="<%= department.name %>照片">
+            </div>
+            -->
+          </div>
+        </div>
+        <div class="rbtm">
+          <div class="outer">
+            <div class="content">
+              <div class="d-flex flex-wrap">
+              <% department.users.each do |user| %>
+                <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#M<%= user.id %>">
+                  <div class="pic_wrapper">
+                    <img src="<%= image_url(user.avatar) %>" class="pic"><br/>
+                  </div>
+                  <name><%= user.name %></name>
+                </button>
+              <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     <hr size=30>
+     </div>
+   </div>
+  <% end %>
+
+  <% @events.each do |event| %>
+  <div class="container">
+    <div class="col-12">
+      <div class="right">
+        <div class="rtop">
+          <div class="row">
+            <div class="col-12 align-self-end">
+              <h1>&nbsp;<%= event.title %><strong>&nbsp;&nbsp;&gt;&gt;</strong></h1>
+            <hr>
+            </div>
+            <!--
+            <div class="col-4">
+              <img class="event_pic" src="<%= image_url(event.image) %>" alt="<%= event.title %>照片">
+            </div>
+            -->
+          </div>
+        </div>
+        <div class="rbtm">
+          <div class="outer">
+            <div class="content">
+              <div class="d-flex flex-wrap">
+              <% event.users.each do |user| %>
+                <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#M<%= user.id %>">
+                  <div class="pic_wrapper">
+                    <img src="<%= image_url(user.avatar) %>" class="pic"><br/>
+                  </div>
+                  <name><%= user.name %></name>
+                </button>
+              <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     <hr size=30>
+     </div>
+   </div>
+  <% end %>
+</div>
+<!-- namecards -->
+<% @users.each do |user| %>
+<div id="M<%= user.id %>" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+         <div class="col-lg-6 col-md-12">
+           <img src="<%= image_url(user.avatar.small) %>" alt="<%= user.name %>沒有照片" width=100%>
+         </div>
+         <div class="col-lg-6 col-md-12 align-self-end">
+           <div class="modal-title">
+             <div class="row">
+               <div class="col-lg-12 col-md-4">
+                 <h1><%= user.name %></h1>
+               </div>
+               <div class="col-lg-12 col-md-8 align-self-center">
+                   <span class="badge badge-warning" style="font-size:20px">供電</span>
+                   <span class="badge badge-success" style="font-size:20px"><%= user.jobs %></span>
+               </div>
+             </div>
+             <hr>
+             <p style="font-size:30px">
+             「<%= user.motto %>」 -- <%= user.name %>
+             </p>
+           </div>
+         </div>
+        </div>
+      </div>
+    <div class="modal-footer">
+      <button type="button" class="btn" data-dismiss="modal">關閉</button>
+    </div>
+    </div>
+  </div>
+</div>
 <% end %>

@@ -18,7 +18,7 @@ class UserGenerator
         user.role = "normal"
         user.save
         add_department(user)
-        check_role(user)
+        #check_role(user)
       end
     end
   end
