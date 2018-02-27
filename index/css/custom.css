@@ -24,10 +24,24 @@ a:hover {
   height: auto;
   padding-top: 10rem;
   padding-bottom: 0rem;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/cover.png");
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 100%), url("../img/cover.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+div#index-title {
+  min-height: 10rem;
+  position: relative;
+  display: table;
+  width: 100%;
+  height: auto;
+  padding: 0rem;
+  margin-bottom: 2rem; 
+  background: url("../img/index-title.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .table {
@@ -208,4 +222,29 @@ section#performance {
     -webkit-clip-path: inset(2rem);
     clip-path: inset(2rem);
   }
+}
+
+div#map {
+  min-height: 40rem;
+  position: relative;
+  display: table;
+  width: 100%;
+  height: auto;
+  padding: 0rem;
+  margin-bottom: 2rem;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/map.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+@media (max-width: 992px) {
+    div#map {
+	min-height: 22rem;
+	margin-bottom: 1rem;
+    }
+}
+
+table#time-and-place {
+    max-width: 640px;
 }
