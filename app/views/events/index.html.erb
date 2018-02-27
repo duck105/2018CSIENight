@@ -1,4 +1,5 @@
 <div class="evt_container">
+<!--  
   <div class="evt_bg-nav-bar">
     <nav>
       <div class="nav nav-tabs evt_nav-bar evt_bg-nav-bar" id="nav-tab" role="tablist">
@@ -9,14 +10,41 @@
       </div>
     </nav>
   </div>
-  <div class="evt_tabpanel go_down_please" id="nav-tabContent">
-    <div id="music"></div>
+-->
+  <div class="evt_tabpanel">
+    <div id="music" class="evt_scroll-section">
+      <h2><a id="music" class="anchor" href="#music" aria-hidden="true"><span aria-hidden="true"></span></a>歌</h2>
+    </div>
     <%= render partial: "partials/event", locals: { events: @music_events, type: "music" } %>
-    <div id="drama"></div>
+    <div id="music" class="evt_scroll-section">
+      <h2><a id="music" class="anchor" href="#music" aria-hidden="true"><span aria-hidden="true"></span></a>舞</h2>
+    </div>
+    
     <%= render partial: "partials/event", locals: { events: @drama_events, type: "drama" } %>
-    <div id="light"></div>
+    <div id="music" class="evt_scroll-section">
+      <h2><a id="music" class="anchor" href="#music" aria-hidden="true"><span aria-hidden="true"></span></a>光</h2>
+    </div>
+    
     <%= render partial: "partials/event", locals: { events: @light_events, type: "light" } %>
-    <div id="dance"></div>
+    <div id="music" class="evt_scroll-section">
+      <h2><a id="music" class="anchor" href="#music" aria-hidden="true"><span aria-hidden="true"></span></a>劇</h2>
+    </div>
+    
     <%= render partial: "partials/event", locals: { events: @dance_events, type: "dance" } %>
+
+
   </div>
 </div>
+
+<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/jquery.waypoints.min.js"></script>
+
+<script>
+  (function ($) {
+    $(function () {
+      $('.evt_scroll-section').scrollIndicatorBullets({
+        titleSelector: 'h1,h2,h3'
+      });
+    });
+  })(jQuery);
+</script>
