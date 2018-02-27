@@ -1,15 +1,58 @@
-<nav>
-  <div class="nav nav-tabs evt_nav-tabs" id="nav-tab" role="tablist">
-    <a class="nav-item nav-link active" data-toggle="tab" href="#music" role="tab" aria-controls="nav-music" aria-selected="true">歌</a>
-    <a class="nav-item nav-link" data-toggle="tab" href="#drama" role="tab" aria-controls="nav-drama" aria-selected="false">劇</a>
-    <a class="nav-item nav-link" data-toggle="tab" href="#light" role="tab" aria-controls="nav-light" aria-selected="false">光</a>
-    <a class="nav-item nav-link" data-toggle="tab" href="#dance" role="tab" aria-controls="nav-dance" aria-selected="false">舞</a>
-  </div>
-</nav>
+<div class="evt_container">
+  <section id="evt_about" class="content-section evt_scroll-section" id="about">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4"
+            data-scroll="toggle(.fromRightIn, .fromRightOut)"><a id="evt_about" class="anchor" href="#evt_about" aria-hidden="true"><span aria-hidden="true"></span></a>
+          夢想
+        </h1>
+        <p class="lead"
+           data-scroll="toggle(.fromLeftIn, .fromLeftOut)">小時候 曾幻想著站上炫目的舞台</p>
+        <hr class="my-4">
+        <p data-scroll="toggle(.fromLeftIn, .fromLeftOut)">成為聚光燈的焦點</p>   
+        <p data-scroll="toggle(.fromLeftIn, .fromLeftOut)">不為台下的歡聲雷動</p>    
+        <p data-scroll="toggle(.fromLeftIn, .fromLeftOut)">只為吸引妳的目光</p>   
+        <p data-scroll="toggle(.fromLeftIn, .fromLeftOut)">長大了</p>    
+        <p data-scroll="toggle(.fromLeftIn, .fromLeftOut)">仍夢想著成為舞台的主宰</p>    
+        <p data-scroll="toggle(.fromLeftIn, .fromLeftOut)">擾動、擠壓著空間</p>   
+        <p data-scroll="toggle(.fromLeftIn, .fromLeftOut)">卻少了一份天真</p>   
+        <p data-scroll="toggle(.fromLeftIn, .fromLeftOut)">一份猖狂</p>
+        <p data-scroll="toggle(.fromLeftIn, .fromLeftOut)">不為他人</p>
+        <p data-scroll="toggle(.fromLeftIn, .fromLeftOut)">只想詮釋出真正的自己</p>
+        <hr class="my-4">
+        <p class="lead"
+           data-scroll="toggle(.fromLeftIn, .fromLeftOut)">3/29 一切不再只是夢想</p>
+      </div>
+    </div>
+</section>
+  <div class="evt_tabpanel">
+    <div id="music" class="evt_scroll-section">
+      <h2><a id="music" class="anchor" href="#music" aria-hidden="true"><span aria-hidden="true"></span></a>
+        歌
+      </h2>
+    </div>
+    <%= render partial: "partials/event", locals: { events: @music_events, type: "music" } %>
+    
+    <div id="drama" class="evt_scroll-section">
+      <h2><a id="drama" class="anchor" href="#drama" aria-hidden="true"><span aria-hidden="true"></span></a>
+        劇
+      </h2>
+    </div>
+    <%= render partial: "partials/event", locals: { events: @drama_events, type: "drama" } %>
+   
+    <div id="light" class="evt_scroll-section">
+      <h2><a id="light" class="anchor" href="#light" aria-hidden="true"><span aria-hidden="true"></span></a>
+        光
+      </h2>
+    </div>
+    <%= render partial: "partials/event", locals: { events: @light_events, type: "light" } %>
+    
+    <div id="dance" class="evt_scroll-section">
+      <h2><a id="dance" class="anchor" href="#dance" aria-hidden="true"><span aria-hidden="true"></span></a>
+        舞
+      </h2>
+    </div>
+    <%= render partial: "partials/event", locals: { events: @dance_events, type: "dance" } %>
 
-<div class="tab-content" id="nav-tabContent">
-  <%= render partial: "partials/event", locals: { events: @music_events, type: "music" } %>
-  <%= render partial: "partials/event", locals: { events: @drama_events, type: "drama" } %>
-  <%= render partial: "partials/event", locals: { events: @light_events, type: "light" } %>
-  <%= render partial: "partials/event", locals: { events: @dance_events, type: "dance" } %>
+  </div>
 </div>

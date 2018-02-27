@@ -1,19 +1,15 @@
-<div class="tab-pane fade show active" id=<%= "#{type}" %> role="tabpanel" aria-labelledby=<%= "nav-#{type}-tab" %>>
-  <section class="evt_tabpanel">
-    <% events.each do |event| %>
-      <section class="evt_nav_section">
-        <%= image_tag(event.image_url.to_s, class: "evt_img") %>
-        <div class="evt_content">
-          <div class="evt_inner">
-            <header>
-              <h3><%= event.title.html_safe %></h3>
-            </header>
-            <p>
-              <%= event.introduction %>
-            </p>
-          </div>
-        </div>
-      </section>
-    <% end %>
+<% events.each do |event| %>
+  <section class="evt_nav_section">
+    <%= image_tag(event.image_url.to_s, class: "evt_img") %>
+    <div class="evt_content">
+      <div class="evt_inner">
+        <header>
+          <h3><%= event.title %></h3>
+        </header>
+        <p>
+          <%= event.introduction.html_safe %>
+        </p>
+      </div>
+    </div>
   </section>
-</div>
+<% end %>

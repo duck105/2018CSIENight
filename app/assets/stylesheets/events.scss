@@ -1,14 +1,51 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-p { 
-  font-size: 16px;
+
+.evt_container {
+
 }
 
-/* event_nav-tabs */
-.evt_nav-tabs {
-  font-size: 20px;
+.evt_bg-nav-bar{
+  background-color: #444a50;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
 }
+/* event_nav-bar */
+.evt_nav-bar {
+  font-size: 20px;
+  padding-left: 30px;
+}
+
+.evt_nav-tabs {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* evt_about */
+
+.evt_about-container {
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 30px;
+  background-color: #f0f0f0;
+}
+
+.evt_about-title {
+  margin-bottom: 0px;
+  text-align: left;
+  display: inline-block;
+  padding-left: 0px;
+  padding-right: 100px;
+  font-size: 50px;
+  font-style: italic;
+}
+
+.evt_about-content {
+  display: inline-block;
+  margin-bottom: 0;
+} 
 
 /* evt_tabpanel */
 .evt_tabpanel {
@@ -95,8 +132,11 @@ p {
   -ms-flex-direction: row-reverse;
   flex-direction: row-reverse;
   background-color: #e6e6e6; /* White */
-  /* background-color: #333856; V1(original) */
-  /* background-color: #6699FF; */
+  padding-right: 30px;
+}
+
+.evt_tabpanel > .evt_nav_section:nth-child(2n+1) {
+  padding-left: 30px;
 }
 
 .evt_tabpanel > .evt_nav_section:nth-child(2n) > .evt_content {
@@ -157,3 +197,80 @@ p {
     max-width: 736px;
   }
 }
+
+// sidebar
+@media only screen and (max-width: 767px) {
+  #scroll-indicator-bullets {
+    display: none; 
+  } 
+}
+
+@media only screen and (min-width: 768px) {
+  #scroll-indicator-bullets {
+    position: fixed;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+        -ms-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+    left: 0;
+    z-index: 8;
+    font-size: .8rem; 
+  }
+    #scroll-indicator-bullets ul {
+      list-style: none; 
+    }
+      #scroll-indicator-bullets ul li {
+        position: relative;
+        padding-right: 7px; 
+      }
+        #scroll-indicator-bullets ul li a {
+          display: block;
+          color: black;
+          padding: 4px 0 0 0;
+          -webkit-user-select: none !important;
+          -webkit-touch-callout: none; 
+        }
+        #scroll-indicator-bullets ul li .bullet-nav-title {
+          position: absolute;
+          top: 4px;
+          right: -10px;
+          display: block;
+          visibility: hidden;
+          opacity: 0.0;
+          white-space: nowrap;
+          text-align: right;
+          -webkit-transition: opacity 300ms, right 300ms, text-shadow 300ms;
+          transition: opacity 300ms, right 300ms, text-shadow 300ms;
+          -webkit-transition-timing-function: ease-out;
+                  transition-timing-function: ease-out;
+          padding: 2px 22px 2px 4px;
+          border-radius: 2px;
+          background: rgba(200, 200, 200, 0.4); 
+        }
+        #scroll-indicator-bullets ul li .bullet-item-link .circle {
+          position: relative;
+          top: 2px;
+          display: block;
+          width: 12px;
+          height: 12px;
+          border-radius: 6px;
+          border: 2px solid black;
+          background: transparent;
+          margin: 4px 0; 
+        }
+        #scroll-indicator-bullets ul li .bullet-item-link.active .circle {
+          background: black; 
+        }
+        #scroll-indicator-bullets ul li.show-title .circle {
+          text-shadow: none; 
+        }
+        #scroll-indicator-bullets ul li.show-title .bullet-nav-title {
+          opacity: 1.0;
+          right: 2px;
+          visibility: visible; 
+        }
+      #scroll-indicator-bullets ul.open .bullet-nav-title {
+        visibility: visible; 
+      } 
+}
+
