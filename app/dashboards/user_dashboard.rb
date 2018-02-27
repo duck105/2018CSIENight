@@ -47,6 +47,7 @@ class UserDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
     :id,
+    :email,
     :name,
     :department,
     :events,
@@ -81,6 +82,6 @@ class UserDashboard < Administrate::BaseDashboard
   # across all pages of the admin dashboard.
   #
   def display_resource(user)
-    user.name
+    "#{user.email.first(3)}##{user.email[6..8]+user.name}"
   end
 end

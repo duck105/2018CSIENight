@@ -8,13 +8,16 @@ class UserGenerator
   def generate_user(age)
     head, *tail = @data
     tail.each do |row|
+      if row[1].nil?
+        next
+      end
       if row[1].include?(age)
         user = User.new
         user.email = "#{row[1].downcase}@ntu.edu.tw"
         user.password = row[1].downcase
         user.name = row[2]
         user.jobs = row[3]
-        user.motto = row[4]
+        # user.motto = row[4]
         user.role = "normal"
         user.save
         add_department(user)
