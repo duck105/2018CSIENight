@@ -11,7 +11,7 @@ class EventDashboard < Administrate::BaseDashboard
     id: Field::Number,
     title: Field::String,
     schedule: Field::String,
-    introduction: CkEditorField,
+    introduction: Field::Text,
     image: ImageField,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -63,7 +63,7 @@ class EventDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how events are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(event)
-  #   "Event ##{event.id}"
-  # end
+  def display_resource(event)
+    event.title
+  end
 end
