@@ -17,11 +17,19 @@
   <script src="js/jquery.easing.min.js"></script>
   <script src="js/smooth-scrolling.js"></script>
   <script src="js/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/jquery.waypoints.min.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function(){
       var trigger = new ScrollTrigger();
     });
     $('body').bind('touchstart',function(){});
+    (function ($) {
+      $(function () {
+        $('.evt_scroll-section').scrollIndicatorBullets({
+          titleSelector: 'h1,h2,h3'
+        });
+      });
+    })(jQuery);
   </script>
 </html>
 
