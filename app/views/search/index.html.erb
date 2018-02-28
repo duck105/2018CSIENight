@@ -109,6 +109,6 @@
 <div class="row">
   <div class="col-lg-7 col-md-12 mx-auto">
   您可能感興趣的表演：
-  <%= link_to(@recommend.title, events_path(anchor: @rec_category), class: "portfolio-item", :data => { :reload => true } )%>
+  <%= link_to(@recommend.title, events_path(anchor: render_anchor(@recommend)), class: "portfolio-item")%>
   </div>
 </div>
