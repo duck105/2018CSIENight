@@ -39,7 +39,7 @@
           <% department.users.each do |user| %>
             <div class="col-3">
               <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#M<%= user.id %>">
-              <img class="avatar" src="<%= image_url(user.avatar.small) %>"><br>
+                <%= image_tag(user.avatar.small, class: "avatar") %> <br>
               <name><%= user.name %></name>
               </button>
             </div>
