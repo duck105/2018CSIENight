@@ -21,6 +21,12 @@
       <li class="nav-item">
         <a href="https://www.facebook.com/2018.CSIE.night/" class="nav-link">Facebook</a>
       </li>
+      <%= form_tag search_path, method: :get do %>
+      <li class="nav-item">
+        <%= text_field_tag :name, params[:name], placeholder: "輸入姓名" %>
+        <%= submit_tag "Search", name: nil %>
+      </li>
+      <% end %>
     </ul>
   </div>
 </nav>

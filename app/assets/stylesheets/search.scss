@@ -1,0 +1,29 @@
+// Place all the styles related to the search controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@font-face {
+	font-family: "7-digits";
+	src: url(/assets/fonts/DSEG7ClassicMini-BoldItalic.ttf);
+} 
+.time-table{
+	background-color: #DDDDDD;
+	width: auto;
+	font-family: 7-digits;
+}
+.bar{
+	min-height: 0.3em;
+}
+.train, .time{
+	background-color: #333333;
+	font-size: 1.2em;
+	padding: 0;
+}
+.train {
+	color: orange;
+}
+.time {
+	color: red;
+}
+fw{
+	width: 100%;
+}

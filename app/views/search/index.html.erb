@@ -1,0 +1,113 @@
+<% if @user.nil? %>  
+  <h2>很抱歉！2018CSIENIGHT沒有這位同學喔</h2>
+  <h3>找不到好友嘛？這裡有<%= link_to("工作人員介紹", workers_path, class: "nav-link", :data => { :reload => true } ) =%>以及<%= link_to("表演介紹", root_path(anchor: "performance"), class: "nav-link") =%>喔</h3>
+<% else %>
+  <div class="row">
+    <div class="col-lg-7 col-md-12 mx-auto">
+      <div class="row">
+        <div class="col-lg-5 col-md-12">
+          <%= image_tag(@user.avatar.small) %>
+        </div>
+        <div class="col-lg-7 col-md-12 align-self-end">
+          <div class="row">
+            <div class="col-11 mx-auto align-self-center">
+              <h1><%= @user.name %></h1>
+            </div>
+            <div class="col-11 mx-auto align-self-center">
+              <span class="badge badge-warning" style="font-size:20px">供電</span>
+              <span class="badge badge-success" style="font-size:20px"><%= @user.jobs %></span>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="col-11 mx-auto">
+          <p style="font-size: 1.6em">
+           「<%= @user.motto %>」 -- <%= @user.name %>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-10 mx-auto">
+      <div class="row">
+        <% if @user.events!=nil %>
+          <div class="col">
+            <span>
+              <table id="show-table" class="table table-sm time-table">
+                <tr>
+                  <td>　</td>
+                  <td><%= @user.name %>的表演</td>
+                  <td> </td>
+                  <td>時　間</td>
+                  <td>　</td>
+                </tr>
+                <% @user.events.each do |event| %>
+                  <tr>
+                    <td>　</td>
+                    <td class="train"><%= event.title %></td>
+                    <td> </td>
+                    <td class="time"><%= event.schedule %></td>
+                    <td>　</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                  </tr>
+                <% end %>
+                <td><div class="bar"></div></td>
+              </table>
+            </span>
+          </div>
+        <% end %>
+        <div class="col">
+          <span>
+            <table id="advice-table" class="table table-sm time-table">
+              <tr>
+                <td>　</td>
+                <td>項　目</td>
+                <td> </td>
+                <td>時　間</td>
+                <td>　</td>
+              </tr>
+              <tr>
+                <td>　</td>
+                <td class="train">建　議　抵　達</td>
+                <td> </td>
+                <td class="time"><%= @arrive_time %></td>
+                <td>　</td>
+              </tr>
+              <tr>
+                <td></td>
+              </tr>
+              <tr>
+                <td>　</td>
+                <td class="train">上半場表演開始</td>
+                <td> </td>
+                <td class="time">18:00</td>
+                <td>　</td>
+              </tr>
+              <tr>
+                <td></td>
+              </tr>
+              <tr>
+                <td>　</td>
+                <td class="train">下半場表演開始</td>
+                <td> </td>
+                <td class="time">20:15</td>
+                <td>　</td>
+              </tr>
+              <tr>
+                <td></td>
+              </tr>
+                <td><div class="bar"></div></td>
+            </table>
+          </span>
+        <div class="col">
+        </div>
+      </div>
+    </div>
+<% end %>
+<div class="row">
+  <div class="col-lg-7 col-md-12 mx-auto">
+  您可能感興趣的表演：
+  <%= link_to(@recommend.title, events_path(anchor: @rec_category), class: "portfolio-item", :data => { :reload => true } )%>
+  </div>
+</div>
