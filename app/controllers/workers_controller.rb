@@ -1,7 +1,7 @@
 class WorkersController < ApplicationController
   def index
-    @departments = Department.all.includes(:users)
-    @events = Event.all.includes(:users)
+    @departments = Department.order("order" => "asc")
+    @events = Event.order("order" => "asc")
     @users = User.all
   end
 end

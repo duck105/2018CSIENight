@@ -1,5 +1,5 @@
 class SponsorsController < ApplicationController
   def index
-    @sponsors = Sponsor.all
+    @sponsors = Sponsor.order("donate" => "desc")
   end
 end
