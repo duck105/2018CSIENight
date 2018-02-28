@@ -28,6 +28,7 @@ class UserDashboard < Administrate::BaseDashboard
     department: Field::BelongsTo,
     avatar: ImageField,
     events: Field::HasMany,
+    priority: Field::Number,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -39,8 +40,8 @@ class UserDashboard < Administrate::BaseDashboard
     :id,
     :name,
     :department,
-    :role,
-    :avatar
+    :avatar,
+    :email,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -49,6 +50,7 @@ class UserDashboard < Administrate::BaseDashboard
     :id,
     :email,
     :name,
+    :priority,
     :department,
     :events,
     :role,
@@ -69,6 +71,7 @@ class UserDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :name,
+    :priority,
     :department,
     :events,
     :role,
