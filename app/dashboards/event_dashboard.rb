@@ -30,6 +30,7 @@ class EventDashboard < Administrate::BaseDashboard
     :title,
     :category,
     :image,
+    :order
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
