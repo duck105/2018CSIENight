@@ -2,8 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.evt_container {
-
+.evt_about_content {
+  padding-left: 60px;
 }
 
 .evt_bg-nav-bar{
@@ -64,6 +64,8 @@
   -moz-flex-direction: row;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
+  padding-left: 60px;
+  padding-right: 30px;
   flex-direction: row;
   /* background-color: #2e3450; V1(original) */
   background-color: #d9d9d9; /* Light Gray */
@@ -116,7 +118,7 @@
   -webkit-align-items: center;
   -ms-align-items: center;
   align-items: center;
-  padding: 2em 3em 0.1em 3em ;
+  padding: 1em 1em 1em 1em ;
   width: 70%;
 }
 
@@ -135,15 +137,16 @@
   padding-right: 30px;
 }
 
-.evt_tabpanel > .evt_nav_section:nth-child(2n+1) {
-  padding-left: 30px;
-}
 
 .evt_tabpanel > .evt_nav_section:nth-child(2n) > .evt_content {
   -moz-align-items: -moz-flex-end;
   -webkit-align-items: -webkit-flex-end;
   -ms-align-items: -ms-flex-end;
   align-items: flex-end;
+  padding-top: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 15px;
 }
 
 @media screen and (max-width: 1680px) {
