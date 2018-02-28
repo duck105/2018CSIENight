@@ -15,6 +15,7 @@ class SponsorDashboard < Administrate::BaseDashboard
     body: Field::Text,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    fanpagelink: Field::String,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -27,6 +28,7 @@ class SponsorDashboard < Administrate::BaseDashboard
     :name,
     :donate,
     :picture,
+    :fanpagelink,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -37,7 +39,8 @@ class SponsorDashboard < Administrate::BaseDashboard
     :donate,
     :created_at,
     :updated_at,
-    :picture
+    :picture,
+    :fanpagelink,
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -48,6 +51,7 @@ class SponsorDashboard < Administrate::BaseDashboard
     :donate,
     :picture, 
     :body, 
+    :fanpagelink,
   ].freeze
 
   # Overwrite this method to customize how events are displayed
