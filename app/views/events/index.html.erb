@@ -1,6 +1,6 @@
 <div class="evt_container">
   <section id="evt_about" class="content-section evt_scroll-section" id="about">
-    <div class="jumbotron jumbotron-fluid">
+    <div class="jumbotron jumbotron-fluid evt_about-container">
       <div class="container evt_about_content">
         <h1 class="display-4"
             data-scroll="toggle(.fromRightIn, .fromRightOut)"><a id="evt_about" class="anchor" href="#evt_about" aria-hidden="true"><span aria-hidden="true"></span></a>
@@ -9,7 +9,7 @@
         <p class="lead"
            data-scroll="toggle(.fromLeftIn, .fromLeftOut)">小時候 曾幻想著站上炫目的舞台</p>
         <hr class="my-4">
-        <p data-scroll="toggle(.fromLeftIn, .fromLeftOut)">成為聚光燈的焦點</p>   
+        <p data-scroll="toggle(.fromLeftIn, .fromLeftOut)">成為聚光燈的焦點</p>  
         <p data-scroll="toggle(.fromLeftIn, .fromLeftOut)">不為台下的歡聲雷動</p>    
         <p data-scroll="toggle(.fromLeftIn, .fromLeftOut)">只為吸引妳的目光</p>   
         <p data-scroll="toggle(.fromLeftIn, .fromLeftOut)">長大了</p>    
@@ -24,12 +24,18 @@
            data-scroll="toggle(.fromLeftIn, .fromLeftOut)">3/29 一切不再只是夢想</p>
       </div>
     </div>
-</section>
+  </section>
   <div class="evt_tabpanel">
-    <div id="music" class="evt_scroll-section">
-      <h2><a id="music" class="anchor" href="#music" aria-hidden="true"><span aria-hidden="true"></span></a>
-        歌
-      </h2>
+    <div id="music" class="evt_scroll-section evt_intro-container">
+      <div class="evt_intro-left">
+        <h2 class="evt_intro-title"><a id="music" class="anchor" href="#music" aria-hidden="true"><span aria-hidden="true"></span></a>
+          歌
+        </h2>
+      </div>
+      <div class="evt_intro-right evt_intro-content">
+        <p>成為聚光燈的焦點</p>  
+        <p>成為聚光燈的焦點</p>  
+      </div>
     </div>
     <%= render partial: "partials/event", locals: { events: @music_events, type: "music" } %>
     
