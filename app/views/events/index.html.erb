@@ -27,39 +27,50 @@
   </section>
   <div class="evt_tabpanel">
     <div id="music" class="evt_scroll-section evt_intro-container">
-      <div class="evt_intro-left">
+      <div class="">
         <h2 class="evt_intro-title"><a id="music" class="anchor" href="#music" aria-hidden="true"><span aria-hidden="true"></span></a>
           歌
         </h2>
       </div>
-      <div class="evt_intro-right evt_intro-content">
-        <p>成為聚光燈的焦點</p>  
-        <p>成為聚光燈的焦點</p>  
+      <div class="evt_intro-content">
       </div>
     </div>
+    <div></div>
     <%= render partial: "partials/event", locals: { events: @music_events, type: "music" } %>
     
-    <div id="drama" class="evt_scroll-section">
-      <h2><a id="drama" class="anchor" href="#drama" aria-hidden="true"><span aria-hidden="true"></span></a>
-        劇
-      </h2>
+    <div id="drama" class="evt_scroll-section evt_intro-container">
+      <div class="">
+        <h2 class="evt_intro-title"><a id="drama" class="anchor" href="#drama" aria-hidden="true"><span aria-hidden="true"></span></a>
+          劇
+        </h2>
+      </div>
+      <div class="evt_intro-content">
+      </div>
     </div>
     <div></div>
     <%= render partial: "partials/event", locals: { events: @drama_events, type: "drama" } %>
    
-    <div id="light" class="evt_scroll-section">
-      <h2><a id="light" class="anchor" href="#light" aria-hidden="true"><span aria-hidden="true"></span></a>
-        光
-      </h2>
+    <div id="light" class="evt_scroll-section evt_intro-container">
+     <div class="">
+        <h2 class="evt_intro-title"><a id="light" class="anchor" href="#light" aria-hidden="true"><span aria-hidden="true"></span></a>
+          光
+        </h2>
+      </div>
+      <div class="evt_intro-content">
+      </div>
     </div>
     <div></div>
 
     <%= render partial: "partials/event", locals: { events: @light_events, type: "light" } %>
     
-    <div id="dance" class="evt_scroll-section">
-      <h2><a id="dance" class="anchor" href="#dance" aria-hidden="true"><span aria-hidden="true"></span></a>
-        舞
-      </h2>
+    <div id="dance" class="evt_scroll-section evt_intro-container">
+      <div class="">
+        <h2 class="evt_intro-title"><a id="dance" class="anchor" href="#dance" aria-hidden="true"><span aria-hidden="true"></span></a>
+          舞
+        </h2>
+      </div>
+      <div class="evt_intro-content">
+      </div>
     </div>
     <div></div>
     <%= render partial: "partials/event", locals: { events: @dance_events, type: "dance" } %>

@@ -55,9 +55,9 @@
 /* evt_intro */
 
 .evt_intro-container {
-  display: none;
-  background-color: #f8f8f8;
-  padding-top: 10px;
+  background-color: #d9d9d9;
+  margin: 0px;
+  padding: 0px;
   padding-left: 80px;
 }
 
@@ -74,7 +74,9 @@
 }
 
 .evt_intro-title {
-  font-size: 64px;
+  visibility: hidden;
+  margin-bottom: 0px;
+  font-size: 1px;
   font-style: italic;
 }
 
