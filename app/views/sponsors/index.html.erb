@@ -17,8 +17,9 @@
 					<div class="card-body bg-light border border-dark rounded">
 						<h5 class="card-title"><%= sponsor.name %></h5>
 						<p class="card-text"><%= sponsor.body %></p>
-
+						<% if sponsor.fanpagelink? %>
 						<%= link_to "More",sponsor.fanpagelink,:class => "sponsor-btn sponsor-btn-primary" %>
+						<% end %>
 
 						<!-- reserved for href button -->
 					</div>
