@@ -21,7 +21,7 @@
       </div>
     </div>
   </center>
-  
+
   <div id="work">
   <% @departments.each do |department| %>
     <div id="C<%= department.id %>" class="card">
@@ -39,7 +39,13 @@
           <% department.users.each do |user| %>
             <div class="col-3">
               <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#M<%= user.id %>">
-                <%= image_tag(user.avatar.small, class: "avatar") %> <br>
+                <% if ! user.avatar? %>
+                     <img src="img/thumb_sticker.png" class="pic">
+                    
+               <% else %>
+                    <img src="<%= image_url(user.avatar.thumb) %>" class="pic">
+                <% end %>  
+                   <br>
               <name><%= user.name %></name>
               </button>
             </div>
@@ -69,7 +75,13 @@
           <% event.users.each do |user| %>
             <div class="col-3">
               <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#M<%= user.id %>">
-              <img class="avatar" src="<%= image_url(user.avatar.small) %>"><br>
+              <% if ! user.avatar? %>
+                     <img src="img/thumb_sticker.png" class="pic">
+                    
+              <% else %>
+                    <img src="<%= image_url(user.avatar.thumb) %>" class="pic">
+              <% end %>  
+                  <br>
               <name><%= user.name %></name>
               </button>
             </div>
@@ -82,7 +94,9 @@
   <% end %>
   </div>
 </div>
+
 <!-- for large device -->
+
 <div id="collapse" class="d-none d-lg-block d-xl-block large-device">
   <center>
     <div id="carousel" class="carousel slide" data-ride="carousel">
@@ -121,10 +135,17 @@
           <div class="outer">
             <div class="content">
               <div class="d-flex flex-wrap">
+               
               <% department.users.each do |user| %>
                 <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#M<%= user.id %>">
                   <div class="pic_wrapper">
-                    <img src="<%= image_url(user.avatar) %>" class="pic"><br/>
+
+                  <% if ! user.avatar? %>
+                     <img src="img/sticker.png" class="pic">
+                    
+                  <% else %>
+                    <img src="<%= image_url(user.avatar) %>" class="pic">
+                  <% end %>  
                   </div>
                   <name><%= user.name %></name>
                 </button>
@@ -163,7 +184,12 @@
               <% event.users.each do |user| %>
                 <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#M<%= user.id %>">
                   <div class="pic_wrapper">
-                    <img src="<%= image_url(user.avatar) %>" class="pic"><br/>
+                  <% if user.avatar %>
+                    <img src="<%= image_url(user.avatar) %>" class="pic">
+                  <% else %>
+                    <img src="img/sticker.png" class="pic">
+                  <% end %>  
+                    <br/>
                   </div>
                   <name><%= user.name %></name>
                 </button>
@@ -179,6 +205,7 @@
   <% end %>
 </div>
 <!-- namecards -->
+
 <% @users.each do |user| %>
 <div id="M<%= user.id %>" class="modal" tabindex="-1" role="dialog">
   <div class="modal-dialog modal-lg" role="document">
