@@ -2,8 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.evt_container {
-
+.evt_about_content {
+  padding-left: 60px;
 }
 
 .evt_bg-nav-bar{
@@ -26,10 +26,15 @@
 /* evt_about */
 
 .evt_about-container {
-  padding-left: 100px;
+  padding-left: 60px;
   padding-right: 100px;
   padding-top: 30px;
+  margin-bottom: 0;
   background-color: #f0f0f0;
+  @media screen and (max-width: 980px) {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
 }
 
 .evt_about-title {
@@ -45,7 +50,39 @@
 .evt_about-content {
   display: inline-block;
   margin-bottom: 0;
-} 
+}
+
+/* evt_intro */
+
+.evt_intro-container {
+  background-color: #d9d9d9;
+  margin: 0px;
+  padding: 0px;
+  padding-left: 80px;
+}
+
+.evt_intro-left {
+  overflow: hidden;
+  float: left;
+  width: 100px;
+  height: 100px;
+}
+
+.evt_intro-right {
+  height: 100px;
+  padding-left: 120px;
+}
+
+.evt_intro-title {
+  visibility: hidden;
+  margin-bottom: 0px;
+  font-size: 1px;
+  font-style: italic;
+}
+
+.evt_intro-content {
+  font-size: 20px;
+}
 
 /* evt_tabpanel */
 .evt_tabpanel {
@@ -64,10 +101,17 @@
   -moz-flex-direction: row;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
+  padding-left: 60px;
+  padding-right: 30px;
+  height: 400px;
   flex-direction: row;
   /* background-color: #2e3450; V1(original) */
   background-color: #d9d9d9; /* Light Gray */
   /* background-color: #4488FF; */
+  @media screen and (max-width: 980px) {
+    padding-right: 30px;
+    padding-left: 45px;
+  }
 }
 
 .evt_tabpanel > .evt_nav_section > .evt_img {
@@ -80,10 +124,13 @@
 }
 
 .evt_tabpanel > .evt_nav_section > .evt_img img {
-  height: 400px;
+  border-top: 20px;
+  border-bottom: 20px;
+  height: 360px;
   width: auto;
-  max-width: 500px;
-  border-radius: 0;
+  max-width: 480px;
+
+  border-radius: 5px;
   display: block;
 }
 
@@ -116,7 +163,7 @@
   -webkit-align-items: center;
   -ms-align-items: center;
   align-items: center;
-  padding: 2em 3em 0.1em 3em ;
+  padding: 1em 1em 1em 1em ;
   width: 70%;
 }
 
@@ -135,15 +182,16 @@
   padding-right: 30px;
 }
 
-.evt_tabpanel > .evt_nav_section:nth-child(2n+1) {
-  padding-left: 30px;
-}
 
 .evt_tabpanel > .evt_nav_section:nth-child(2n) > .evt_content {
   -moz-align-items: -moz-flex-end;
   -webkit-align-items: -webkit-flex-end;
   -ms-align-items: -ms-flex-end;
   align-items: flex-end;
+  padding-top: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 15px;
 }
 
 @media screen and (max-width: 1680px) {
@@ -187,9 +235,13 @@
 
 /* evt_img */
 .evt_img {
+  padding-top: 20px;
+  padding-bottom: 20px;
   height: 400px;
   width: auto;
-  max-width: 500px;
+  max-width: 480px;
+
+  border-radius: 5px;
 }
 @media screen and (max-width: 736px) {
   .evt_img{
@@ -199,13 +251,7 @@
 }
 
 // sidebar
-@media only screen and (max-width: 767px) {
-  #scroll-indicator-bullets {
-    display: none; 
-  } 
-}
 
-@media only screen and (min-width: 768px) {
   #scroll-indicator-bullets {
     position: fixed;
     top: 50%;
@@ -218,6 +264,7 @@
   }
     #scroll-indicator-bullets ul {
       list-style: none; 
+      padding-left: 15px;
     }
       #scroll-indicator-bullets ul li {
         position: relative;
@@ -233,12 +280,12 @@
         #scroll-indicator-bullets ul li .bullet-nav-title {
           position: absolute;
           top: 4px;
-          right: -10px;
+          left: 10px;
           display: block;
           visibility: hidden;
           opacity: 0.0;
           white-space: nowrap;
-          text-align: right;
+          text-align: left;
           -webkit-transition: opacity 300ms, right 300ms, text-shadow 300ms;
           transition: opacity 300ms, right 300ms, text-shadow 300ms;
           -webkit-transition-timing-function: ease-out;
@@ -271,6 +318,10 @@
         }
       #scroll-indicator-bullets ul.open .bullet-nav-title {
         visibility: visible; 
-      } 
-}
+      }
 
+@media only screen and (max-width: 980px) {
+  #scroll-indicator-bullets ul li .bullet-nav-title {
+    display: none;
+  } 
+}
