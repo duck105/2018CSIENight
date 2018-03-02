@@ -44,6 +44,7 @@
         劇
       </h2>
     </div>
+    <div></div>
     <%= render partial: "partials/event", locals: { events: @drama_events, type: "drama" } %>
    
     <div id="light" class="evt_scroll-section">
@@ -51,6 +52,8 @@
         光
       </h2>
     </div>
+    <div></div>
+
     <%= render partial: "partials/event", locals: { events: @light_events, type: "light" } %>
     
     <div id="dance" class="evt_scroll-section">
@@ -58,6 +61,7 @@
         舞
       </h2>
     </div>
+    <div></div>
     <%= render partial: "partials/event", locals: { events: @dance_events, type: "dance" } %>
 
   </div>
