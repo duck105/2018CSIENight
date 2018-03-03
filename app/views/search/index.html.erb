@@ -2,113 +2,111 @@
   <h2>很抱歉！2018CSIENIGHT沒有這位同學喔</h2>
   <h3>找不到好友嘛？這裡有<%= link_to("工作人員介紹", workers_path, class: "nav-link", :data => { :reload => true } ) =%>以及<%= link_to("表演介紹", root_path(anchor: "performance"), class: "nav-link") =%>喔</h3>
 <% else %>
-  <div class="row">
-    <div class="col-lg-7 col-md-12 mx-auto">
-      <div class="row">
-        <div class="col-lg-5 col-md-12">
+  <section> 
+    <div class="container" id="search-img">
+      <div class="row search-row" id="search-about">
+        <div class="avatar">
           <%= image_tag(@user.avatar.small) %>
         </div>
-        <div class="col-lg-7 col-md-12 align-self-end">
-          <div class="row">
-            <div class="col-11 mx-auto align-self-center">
-              <h1><%= @user.name %></h1>
-            </div>
-            <div class="col-11 mx-auto align-self-center">
-              <span class="badge badge-warning" style="font-size:20px">供電</span>
-              <span class="badge badge-success" style="font-size:20px"><%= @user.jobs %></span>
-            </div>
+        <div class="search-box">
+          <div class="search-box-title">
+            <p class="lead"><%= @user.name %></p>
+          </div>
+          <div class="search-box-content">
+            <p>   
+              <span class="badge badge-warning" style="font-size:20px">供電</span>      
+              <span class="badge badge-success" style="font-size:20px"><%= @user.jobs %></span>   
+            </p>
+            <p><%= render_motto(@user)  %></p>
           </div>
         </div>
-        <hr>
-        <div class="col-11 mx-auto">
-          <p style="font-size: 1.6em">
-           「<%= @user.motto %>」 -- <%= @user.name %>
-          </p>
-        </div>
       </div>
-    </div>
-    <div class="col-10 mx-auto">
-      <div class="row">
-        <% if @user.events!=nil %>
-          <div class="col">
-            <span>
-              <table id="show-table" class="table table-sm time-table">
+      <div class="row search-row two-col" id="search-time">
+        <div class="search-box">
+          <div class="search-box-title">
+            <p class="lead"><%= @user.name %>的表演</p>
+          </div>
+          <div class="search-box-content">        
+            <table class="table">
+              <tbody>
                 <tr>
-                  <td>　</td>
-                  <td><%= @user.name %>的表演</td>
-                  <td> </td>
-                  <td>時　間</td>
-                  <td>　</td>
+                  <td>大二舞</td>
+                  <td>18:00-19:00</td>
                 </tr>
-                <% @user.events.each do |event| %>
-                  <tr>
-                    <td>　</td>
-                    <td class="train"><%= event.title %></td>
-                    <td> </td>
-                    <td class="time"><%= event.schedule %></td>
-                    <td>　</td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                  </tr>
-                <% end %>
-                <td><div class="bar"></div></td>
-              </table>
-            </span>
-          </div>
-        <% end %>
-        <div class="col">
-          <span>
-            <table id="advice-table" class="table table-sm time-table">
-              <tr>
-                <td>　</td>
-                <td>項　目</td>
-                <td> </td>
-                <td>時　間</td>
-                <td>　</td>
-              </tr>
-              <tr>
-                <td>　</td>
-                <td class="train">建　議　抵　達</td>
-                <td> </td>
-                <td class="time"><%= @arrive_time %></td>
-                <td>　</td>
-              </tr>
-              <tr>
-                <td></td>
-              </tr>
-              <tr>
-                <td>　</td>
-                <td class="train">上半場表演開始</td>
-                <td> </td>
-                <td class="time">18:00</td>
-                <td>　</td>
-              </tr>
-              <tr>
-                <td></td>
-              </tr>
-              <tr>
-                <td>　</td>
-                <td class="train">下半場表演開始</td>
-                <td> </td>
-                <td class="time">20:15</td>
-                <td>　</td>
-              </tr>
-              <tr>
-                <td></td>
-              </tr>
-                <td><div class="bar"></div></td>
+                <tr>
+                  <td>光舞</td>
+                  <td>21:00-21:30</td>
+                </tr>
+              </tbody>
             </table>
-          </span>
-        <div class="col">
+          </div>
+        </div>
+        <div class="search-box">
+          <div class="search-box-title">
+            <p class="lead">即將到來</p>
+          </div>
+          <div class="search-box-content">        
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td>建議抵達</td>
+                  <td>19:00</td>
+                </tr>
+                <tr>
+                  <td>上半場表演開始</td>
+                  <td>18:00</td>
+                </tr>
+                <tr>
+                  <td>下半場表演開始</td>
+                  <td>20:15</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="row search-row two-col" id="search-others">
+        <div class="search-box">
+          <div class="search-box-title">
+            <p class="lead">您可能認識的朋友</p>
+          </div>
+          <div class="search-box-content"> 
+            <table class="table table-avatar">
+              <tbody>
+                <tr>
+                  <td class="avatar">   
+                    <%= link_to image_tag(@friend.avatar), search_path(:name => @friend.name) %>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="mid-col lead">
+                    <%= link_to @friend.name, search_path(:name => @friend.name), class: "search-link" %>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="search-box" id="search-perform">
+          <div class="search-box-title">
+            <p class="lead">您可能有興趣的表演</p>
+          </div>
+          <div class="search-box-content"> 
+            <table class="table table-avatar">
+              <tbody>
+                <tr>
+                  <td class="avatar">    
+                    <%= link_to image_tag(@recommend.image), events_path(anchor: render_anchor(@recommend)) %>     
+                  </td>
+                </tr>
+                <tr>
+                  <td class="mid-col lead"><%= link_to @recommend.title, events_path(anchor: render_anchor(@recommend)), class: "search-link" %></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 <% end %>
-<div class="row">
-  <div class="col-lg-7 col-md-12 mx-auto">
-  您可能感興趣的表演：
-  <%= link_to(@recommend.title, events_path(anchor: render_anchor(@recommend)), class: "portfolio-item")%>
-  </div>
-</div>
