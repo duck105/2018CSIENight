@@ -9,6 +9,7 @@ class SearchController < ApplicationController
         @arrive_time = "18:00"
       end
     end
-    @recommend = Event.all.sample
+    @recommend = Event.all_except(@user.events).sample
+    @friend = User.all_except(@user).sample
   end
 end
