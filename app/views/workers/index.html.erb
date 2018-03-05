@@ -37,13 +37,13 @@
           <adj>
           <div> <div class="row">
           <% department.users.each do |user| %>
-            <div class="col-3">
+            <div >
               <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#M<%= user.id %>">
                 <% if ! user.avatar? %>
-                     <img src="img/thumb_sticker.png" class="pic">
+                     <img src="img/thumb_sticker.png" class="pic small-picheight">
                     
                <% else %>
-                    <img src="<%= image_url(user.avatar.thumb) %>" class="pic">
+                    <img src="<%= image_url(user.avatar.thumb) %>" class="pic small-picheight">
                 <% end %>  
                    <br>
               <name><%= user.name %></name>
@@ -76,10 +76,10 @@
             <div class="col-3">
               <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#M<%= user.id %>">
               <% if ! user.avatar? %>
-                     <img src="img/thumb_sticker.png" class="pic">
+                     <img src="img/thumb_sticker.png" class="pic small-picheight">
                     
               <% else %>
-                    <img src="<%= image_url(user.avatar.thumb) %>" class="pic">
+                    <img src="<%= image_url(user.avatar.thumb) %>" class="pic small-picheight">
               <% end %>  
                   <br>
               <name><%= user.name %></name>
@@ -137,17 +137,18 @@
               <div class="d-flex flex-wrap">
                
               <% department.users.each do |user| %>
-                <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#M<%= user.id %>">
-                  <div class="pic_wrapper">
+                <button type="button" class="btn btn-outline-secondary " data-toggle="modal" data-target="#M<%= user.id %>">
+                  <div class="pic_wrapper large-picheight">
 
                   <% if ! user.avatar? %>
-                     <img src="img/sticker.png" class="pic">
-                    
+                     <img src="img/sticker.png" class="pic large-picheight">                   
                   <% else %>
-                    <img src="<%= image_url(user.avatar) %>" class="pic">
-                  <% end %>  
+                    <img src="<%= image_url(user.avatar) %>" class="pic large-picheight">
+                  <% end %>                    
                   </div>
-                  <name><%= user.name %></name>
+                  <div >
+                    <div><%= user.name %></div> 
+                  </div>                 
                 </button>
               <% end %>
               </div>
@@ -183,15 +184,15 @@
               <div class="d-flex flex-wrap">
               <% event.users.each do |user| %>
                 <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#M<%= user.id %>">
-                  <div class="pic_wrapper">
+                  <div class="pic_wrapper large-picheight">
                   <% if user.avatar %>
-                    <img src="<%= image_url(user.avatar) %>" class="pic">
+                    <img src="<%= image_url(user.avatar) %>" class="pic large-picheight">
                   <% else %>
-                    <img src="img/sticker.png" class="pic">
+                    <img src="img/sticker.png" class="pic large-picheight">
                   <% end %>  
                     <br/>
                   </div>
-                  <name><%= user.name %></name>
+                  <div>><%= user.name %></div>
                 </button>
               <% end %>
               </div>
