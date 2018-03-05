@@ -117,6 +117,10 @@ div#search-about {
     margin-top: 15rem;
 }
 
+div#search-none {
+    margin-top: 15rem;
+}
+
 #search-about .search-box {
     width: 77%;
 }
@@ -126,15 +130,15 @@ div#search-about {
 }
 
 @media (max-width: 775px) {
-    .two-col .search-box {
-	width: 95%;
-    }
+  .two-col .search-box {
+	 width: 95%;
+  }
 }
 
 @media (max-width: 972px) {
-    #search-about .search-box {
-	width: 95%;
-    }
+  #search-about .search-box {
+    width: 95%;
+  }
 }
 
 #search-img thead th {

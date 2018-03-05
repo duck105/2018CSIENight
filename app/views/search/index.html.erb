@@ -1,9 +1,22 @@
-<% if @user.nil? %>  
-  <h2>很抱歉！2018CSIENIGHT沒有這位同學喔</h2>
-  <h3>找不到好友嘛？這裡有<%= link_to("工作人員介紹", workers_path, class: "nav-link", :data => { :reload => true } ) =%>以及<%= link_to("表演介紹", root_path(anchor: "performance"), class: "nav-link") =%>喔</h3>
-<% else %>
-  <section> 
-    <div class="container" id="search-img">
+<section> 
+  <div class="container" id="search-img">
+    <% if @user.nil? %>
+      <div class="row search-row" id="search-about">
+        <div class="search-box">
+          <div class="search-box-title">
+            <p class="lead">很抱歉！2018CSIENIGHT沒有這位 <%= params[:name]  %> 同學喔</p>
+          </div>
+          <div class="search-box-content">
+            <p class="lead">
+              找不到好友嘛？<br>
+            </p>
+            <p class="lead">
+              這裡有 <%= link_to("工作人員介紹", workers_path, :data => { :reload => true } ) %> 以及 <%= link_to("表演介紹", root_path(anchor: "performance")) %> 喔!
+            </p>
+          </div>
+        </div>
+      </div>
+    <% else %>
       <div class="row search-row" id="search-about">
         <div class="avatar">
           <%= image_tag(@user.avatar.small) %>
@@ -13,11 +26,10 @@
             <p class="lead"><%= @user.name %></p>
           </div>
           <div class="search-box-content">
-            <p>   
-              <span class="badge badge-warning" style="font-size:20px">供電</span>      
+            <p>    
               <span class="badge badge-success" style="font-size:20px"><%= @user.jobs %></span>   
             </p>
-            <p><%= render_motto(@user)  %></p>
+            <p class="lead"><%= render_motto(@user) %></p>
           </div>
         </div>
       </div>
@@ -29,14 +41,12 @@
           <div class="search-box-content">        
             <table class="table">
               <tbody>
-                <tr>
-                  <td>大二舞</td>
-                  <td>18:00-19:00</td>
-                </tr>
-                <tr>
-                  <td>光舞</td>
-                  <td>21:00-21:30</td>
-                </tr>
+                <% @user.events.each do |event| %>
+                  <tr>
+                    <td><%= event.title %></td>
+                    <td><%= event.schedule %></td>
+                  </tr>
+                <% end %>
               </tbody>
             </table>
           </div>
@@ -50,7 +60,7 @@
               <tbody>
                 <tr>
                   <td>建議抵達</td>
-                  <td>19:00</td>
+                  <td><%=@arrive_time  %></td>
                 </tr>
                 <tr>
                   <td>上半場表演開始</td>
@@ -65,48 +75,49 @@
           </div>
         </div>
       </div>
-      <div class="row search-row two-col" id="search-others">
-        <div class="search-box">
-          <div class="search-box-title">
-            <p class="lead">您可能認識的朋友</p>
-          </div>
-          <div class="search-box-content"> 
-            <table class="table table-avatar">
-              <tbody>
-                <tr>
-                  <td class="avatar">   
-                    <%= link_to image_tag(@friend.avatar), search_path(:name => @friend.name) %>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="mid-col lead">
-                    <%= link_to @friend.name, search_path(:name => @friend.name), class: "search-link" %>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+    <% end %> 
+
+    <div class="row search-row two-col" id="search-others">
+      <div class="search-box">
+        <div class="search-box-title">
+          <p class="lead">您可能認識的朋友</p>
         </div>
-        <div class="search-box" id="search-perform">
-          <div class="search-box-title">
-            <p class="lead">您可能有興趣的表演</p>
-          </div>
-          <div class="search-box-content"> 
-            <table class="table table-avatar">
-              <tbody>
-                <tr>
-                  <td class="avatar">    
-                    <%= link_to image_tag(@recommend.image), events_path(anchor: render_anchor(@recommend)) %>     
-                  </td>
-                </tr>
-                <tr>
-                  <td class="mid-col lead"><%= link_to @recommend.title, events_path(anchor: render_anchor(@recommend)), class: "search-link" %></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+        <div class="search-box-content"> 
+          <table class="table table-avatar">
+            <tbody>
+              <tr>
+                <td class="avatar">   
+                  <%= link_to image_tag(@friend.avatar), search_path(:name => @friend.name) %>
+                </td>
+              </tr>
+              <tr>
+                <td class="mid-col lead">
+                  <%= link_to @friend.name, search_path(:name => @friend.name), class: "search-link" %>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="search-box" id="search-perform">
+        <div class="search-box-title">
+          <p class="lead">您可能有興趣的表演</p>
+        </div>
+        <div class="search-box-content"> 
+          <table class="table table-avatar">
+            <tbody>
+              <tr>
+                <td class="avatar">    
+                  <%= link_to image_tag(@recommend.image), events_path(anchor: render_anchor(@recommend)) %>     
+                </td>
+              </tr>
+              <tr>
+                <td class="mid-col lead"><%= link_to @recommend.title, events_path(anchor: render_anchor(@recommend)), class: "search-link" %></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
-  </section>
-<% end %>
+  </div>
+</section>

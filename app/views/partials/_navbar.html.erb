@@ -23,10 +23,8 @@
       </li>
 
     </ul>
-   
       <%= form_tag search_path,:class => "form-inline mt-2 mt-md-0", method: :get do %>
-     
-        <%= text_field_tag :name, params[:name], placeholder: "輸入姓名",:class => "form-control mr-sm-2 search" %>
+        <%= text_field_tag :name, params[:name], placeholder: "輸入好友姓名",:class => "form-control mr-sm-2 search" %>
         <%= submit_tag "Search", name: nil, :class => " btn-outline-success search-btn my-2 my-sm-0" %>
       
       <% end %>
