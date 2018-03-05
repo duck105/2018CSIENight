@@ -73,7 +73,7 @@
           <adj>
           <div> <div class="row">
           <% event.users.each do |user| %>
-            <div class="col-3">
+            <div >
               <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#M<%= user.id %>">
               <% if ! user.avatar? %>
                      <img src="img/thumb_sticker.png" class="pic small-picheight">
