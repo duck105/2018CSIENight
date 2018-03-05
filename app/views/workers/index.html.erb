@@ -215,9 +215,9 @@
         <div class="row">
          <div class="col-lg-6 col-md-12">
             <% if user.avatar.blank? %>
-              <img src="../img/sticker.png" class="pic large-picheight">                   
+              <img src="../img/sticker.png" width="100%">                   
             <% else %>
-              <img src="<%= image_url(user.avatar.small) %>" class="pic large-picheight">
+              <img src="<%= image_url(user.avatar.small) %>" width="100%">
             <% end %>  
          </div>
          <div class="col-lg-6 col-md-12 align-self-end">
