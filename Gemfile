@@ -24,6 +24,7 @@ gem 'kaminari', '~> 1.1', '>= 1.1.1'
 gem 'bootstrap', '~> 4.0'
 gem 'awesome_rails_console'
 gem 'ckeditor', github: 'galetahub/ckeditor'
+gem 'fog-aws', '~> 0.7.6'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
