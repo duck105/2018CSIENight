@@ -1,6 +1,10 @@
 class SearchController < ApplicationController
   def index
-    @user = User.where('name LIKE ?', "%#{params[:name]}%").includes(:events).first 
+    if params[:name].length == 2
+      @user = User.where('name LIKE ?', "#{params[:name].first}+　+#{params[:name].last}").includes(:events).first 
+    else
+      @user = User.where('name LIKE ?', "#{params[:name]}").includes(:events).first 
+    end
     if @user.present?
       if @user.events.present?
         time = @user.events.order("schedule" => "asc").first.schedule.split('-').first.to_time
