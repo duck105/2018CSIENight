@@ -23,11 +23,13 @@
         </div>
         <div class="search-box">
           <div class="search-box-title">
-            <p class="lead"><%= @user.name %></p>
+            <p class="lead"><%= @user.jobs %> <%= @user.name %></p>
           </div>
           <div class="search-box-content">
             <p>    
-              <span class="badge badge-success" style="font-size:20px"><%= @user.jobs %></span>   
+              <% if @user.department.present? %>
+                <span class="badge badge-success" style="font-size:20px"><%= @user.department.name %></span>
+              <% end %>   
             </p>
             <p class="lead"><%= render_motto(@user) %></p>
           </div>

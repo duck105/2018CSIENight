@@ -222,13 +222,18 @@
          <div class="col-lg-6 col-md-12 align-self-end">
            <div class="modal-title">
              <div class="row">
-               <div class="col-lg-12 col-md-4">
-                 <h1><%= user.name %></h1>
-               </div>
-               <div class="col-lg-12 col-md-8 align-self-center">
-                   <span class="badge badge-warning" style="font-size:20px">供電</span>
-                   <span class="badge badge-success" style="font-size:20px"><%= user.jobs %></span>
-               </div>
+                <div class="col-lg-12 col-md-4">
+                  <h4><%= user.jobs %></h3>
+                  <h1><%= user.name %></h1>
+                </div>
+                <div class="col-lg-12 col-md-8 align-self-center">
+                  <% user.events.each do |event| %>
+                    <span class="badge badge-warning" style="font-size:20px"><%= event.title %></span>
+                  <% end %>
+                  <% if user.department.present? %>
+                    <span class="badge badge-success" style="font-size:20px"><%= user.department.name %></span>
+                  <% end %>
+                </div>
              </div>
              <hr>
              <p style="font-size:30px">
