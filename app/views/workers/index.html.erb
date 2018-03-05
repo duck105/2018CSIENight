@@ -138,9 +138,8 @@
               <% department.users.each do |user| %>
                 <button type="button" class="btn btn-outline-secondary " data-toggle="modal" data-target="#M<%= user.id %>">
                   <div class="pic_wrapper large-picheight">
-
                   <% if ! user.avatar? %>
-                     <img src="img/sticker.png" class="pic large-picheight">                   
+                    <img src="../img/sticker.png" class="pic large-picheight">                   
                   <% else %>
                     <img src="<%= image_url(user.avatar) %>" class="pic large-picheight">
                   <% end %>                    
