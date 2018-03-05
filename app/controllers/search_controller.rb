@@ -1,7 +1,8 @@
 class SearchController < ApplicationController
   def index
+    byebug
     if params[:name].length == 2
-      @user = User.where('name LIKE ?', "#{params[:name].first}+　+#{params[:name].last}").includes(:events).first 
+      @user = User.where('name LIKE ?', "#{params[:name].first}"+"　"+"#{params[:name].last}").includes(:events).first 
     else
       @user = User.where('name LIKE ?', "#{params[:name]}").includes(:events).first 
     end
