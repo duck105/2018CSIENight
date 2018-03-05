@@ -39,13 +39,12 @@
           <% department.users.each do |user| %>
             <div >
               <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#M<%= user.id %>">
-                <% if ! user.avatar? %>
-                     <img src="img/thumb_sticker.png" class="pic small-picheight">
-                    
-               <% else %>
-                    <img src="<%= image_url(user.avatar.thumb) %>" class="pic small-picheight">
+                <% if user.avatar.blank? %>
+                  <img src="img/thumb_sticker.png" class="pic small-picheight">
+                <% else %>
+                  <img src="<%= image_url(user.avatar.thumb) %>" class="pic small-picheight">
                 <% end %>  
-                   <br>
+                <br>
               <name><%= user.name %></name>
               </button>
             </div>
@@ -75,7 +74,7 @@
           <% event.users.each do |user| %>
             <div >
               <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#M<%= user.id %>">
-              <% if ! user.avatar? %>
+              <% if user.avatar.blank? %>
                 <img src="../img/thumb_sticker.png" class="pic small-picheight">
               <% else %>
                 <%= image_tag((user.avatar.thumb), class: "pic small-picheight") %>
@@ -138,7 +137,7 @@
               <% department.users.each do |user| %>
                 <button type="button" class="btn btn-outline-secondary " data-toggle="modal" data-target="#M<%= user.id %>">
                   <div class="pic_wrapper large-picheight">
-                  <% if ! user.avatar? %>
+                  <% if user.avatar.blank? %>
                     <img src="../img/sticker.png" class="pic large-picheight">                   
                   <% else %>
                     <img src="<%= image_url(user.avatar) %>" class="pic large-picheight">
@@ -183,12 +182,12 @@
               <% event.users.each do |user| %>
                 <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#M<%= user.id %>">
                   <div class="pic_wrapper large-picheight">
-                  <% if user.avatar %>
-                    <img src="<%= image_url(user.avatar) %>" class="pic large-picheight">
+                  <% if user.avatar.blank? %>
+                    <img src="../img/sticker.png" class="pic large-picheight">                   
                   <% else %>
-                    <img src="img/sticker.png" class="pic large-picheight">
-                  <% end %>  
-                    <br/>
+                    <img src="<%= image_url(user.avatar) %>" class="pic large-picheight">
+                  <% end %>   
+                  <br/>
                   </div>
                   <div>><%= user.name %></div>
                 </button>
@@ -215,7 +214,11 @@
       <div class="modal-body">
         <div class="row">
          <div class="col-lg-6 col-md-12">
-           <img src="<%= image_url(user.avatar.small) %>" alt="<%= user.name %>沒有照片" width=100%>
+            <% if user.avatar.blank? %>
+              <img src="../img/sticker.png" class="pic large-picheight">                   
+            <% else %>
+              <img src="<%= image_url(user.avatar.small) %>" class="pic large-picheight">
+            <% end %>  
          </div>
          <div class="col-lg-6 col-md-12 align-self-end">
            <div class="modal-title">
