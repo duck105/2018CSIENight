@@ -20,8 +20,8 @@ class UserGenerator
         # user.motto = row[4]
         user.role = "normal"
         user.save
-        add_department(user)
-        #check_role(user)
+        # add_department(user)
+        # check_role(user)
       end
     end
   end
