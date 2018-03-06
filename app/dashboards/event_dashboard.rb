@@ -16,7 +16,7 @@ class EventDashboard < Administrate::BaseDashboard
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     users: Field::HasMany,
-    order: Field::Number,
+    priority: Field::Number,
     category: Field::Select.with_options(collection: ["歌", "舞", "劇","光"])
   }.freeze
 
@@ -30,7 +30,7 @@ class EventDashboard < Administrate::BaseDashboard
     :title,
     :category,
     :image,
-    :order
+    :priority
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -42,7 +42,7 @@ class EventDashboard < Administrate::BaseDashboard
     :introduction,
     :image,
     :users,
-    :order,
+    :priority,
     :category,
     :created_at,
     :updated_at,
@@ -56,7 +56,7 @@ class EventDashboard < Administrate::BaseDashboard
     :schedule,
     :introduction,
     :image,
-    :order,
+    :priority,
     :category,
     :users
   ].freeze
