@@ -10,14 +10,6 @@
           </button>
         </div>
         <% end %>
-        <% @departments.each do |department| %>
-        <div class="carousel-item">
-          <button type="button" class="btn btn-link text-left" data-toggle="collapse" data-target="#D<%= department.id %>" aria-expanded="false" aria-controls="D<% department.id %>">
-          <button type="button" class="btn btn-link text-left" data-toggle="collapse" data-target="#D<%= department.id %>" aria-expanded="false" aria-controls="D<% department.id %>">
-          <img class="d-block h-20" src="<%= image_url(department.image) %>" alt="召部照">
-          </button>
-        </div>
-        <% end %>
       </div>
     </div>
   </center>
@@ -102,11 +94,6 @@
         <% @events.each do |event| %>
           <div class="carousel-item <% if event == @events.first %><%= "active" %><% end %>">
           <img class="d-block h-20" src="<%= image_url(event.image) %>" alt="<%= event.title %>照片">
-        </div>
-        <% end %>
-        <% @departments.each do |department| %>
-        <div class="carousel-item">
-          <img class="d-block h-20" src="<%= image_url(department.image) %>" alt="召部照">
         </div>
         <% end %>
       </div>
