@@ -19,13 +19,7 @@
 //= require popper
 //= require bootstrap
 
-
-// start of event.js
-
-// end of event.js
-
 // one-page side-bar
-
 (function() {
   "use strict";
   (function(factory) {
@@ -252,14 +246,4 @@
       };
     };
   });
-
 }).call(this);
-
-
-// to deal with reload problem of nav-bar
-$(function(){
-	$('a[data-reload="true"').on('click', function(e) {
-		window.location = $(e.target).attr('href');
-		window.location.reload(true);
-	});
-});
