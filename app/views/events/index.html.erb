@@ -25,7 +25,6 @@
       </div>
     </div>
   </section>
-
   <div class="evt_tabpanel">
     <div id="music" class="evt_scroll-section evt_intro-container">
       <div class="">
@@ -36,8 +35,9 @@
       <div class="evt_intro-content">
       </div>
     </div>
+    <div></div>
     <%= render partial: "partials/event", locals: { events: @music_events, type: "music" } %>
-
+    
     <div id="dance" class="evt_scroll-section evt_intro-container">
       <div class="">
         <h2 class="evt_intro-title"><a id="dance" class="anchor" href="#dance" aria-hidden="true"><span aria-hidden="true"></span></a>
@@ -47,8 +47,9 @@
       <div class="evt_intro-content">
       </div>
     </div>
+    <div></div>
     <%= render partial: "partials/event", locals: { events: @dance_events, type: "dance" } %>
-    
+
     <div id="drama" class="evt_scroll-section evt_intro-container">
       <div class="">
         <h2 class="evt_intro-title"><a id="drama" class="anchor" href="#drama" aria-hidden="true"><span aria-hidden="true"></span></a>
@@ -58,10 +59,11 @@
       <div class="evt_intro-content">
       </div>
     </div>
+    <div></div>
     <%= render partial: "partials/event", locals: { events: @drama_events, type: "drama" } %>
-   
+    
     <div id="light" class="evt_scroll-section evt_intro-container">
-     <div class="">
+      <div class="">
         <h2 class="evt_intro-title"><a id="light" class="anchor" href="#light" aria-hidden="true"><span aria-hidden="true"></span></a>
           光
         </h2>
@@ -69,6 +71,7 @@
       <div class="evt_intro-content">
       </div>
     </div>
+    <div></div>
     <%= render partial: "partials/event", locals: { events: @light_events, type: "light" } %>
   </div>
 </div>
