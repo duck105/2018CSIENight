@@ -370,6 +370,12 @@ div#search-img:before {
   background-size: cover;
 }
 
+@media(max-width: 420px){
+    div#search-img:before {
+	height: 820px;
+    }
+}
+
 .avatar {
     margin-top: 1rem;
     margin-bottom: 1rem;
