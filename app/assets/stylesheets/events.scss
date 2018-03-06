@@ -182,12 +182,12 @@
   -webkit-align-items: -webkit-flex-end;
   -ms-align-items: -ms-flex-end;
   align-items: flex-end;
-  padding-top: 15px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 15px;
   @media screen and (min-width: 980px) {
     text-align: right;
+    padding-top: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 15px;
   }
 }
 
@@ -198,9 +198,6 @@
 }
 
 @media screen and (max-width: 1280px) {
-  .evt_img {
-  }
-
   .evt_tabpanel > .evt_nav_section > .evt_content {
     width: 50%;
   }
@@ -218,6 +215,11 @@
 @media screen and (max-width: 736px) {
   .evt_img {
     width: 100%;
+  }
+  .evt_tabpanel > .evt_nav_section > .evt_content {
+    width: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
   }
   .evt_img-container {
     padding-right: 0px;
