@@ -248,6 +248,16 @@ table#time-and-place {
   max-width: 640px;
 }
 
+#schedule thead th {
+    border-top: hidden !important;
+    border-bottom: hidden !important;
+}
+
+#schedule td {
+    border-top: hidden !important;
+    border-bottom: hidden !important;
+}
+
 .footer {
   bottom: 0;
   width: 100%;
