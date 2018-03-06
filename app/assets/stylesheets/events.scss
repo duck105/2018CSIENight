@@ -105,9 +105,7 @@
   padding-right: 30px;
   min-height: 300px;
   flex-direction: row;
-  /* background-color: #2e3450; V1(original) */
   background-color: #d9d9d9; /* Light Gray */
-  /* background-color: #4488FF; */
   @media screen and (max-width: 980px) {
     padding-right: 30px;
     padding-left: 45px;
@@ -119,7 +117,7 @@
 }
 
 .evt_img {
-  min-width: 400px;
+  min-width: 450px;
   background-position: center center;
   background-size: cover;
   border-radius: 0;
@@ -188,12 +186,12 @@
 }
 
 @media screen and (max-width: 1680px) {
-  .evt_tabpanel > .evt_nav_section > .evt_img {
-    width: 40%;
+  .evt_img {
+    width: 50%;
   }
 
   .evt_tabpanel > .evt_nav_section > .evt_content {
-    width: 60%;
+    width: 55%;
   }
 }
 
@@ -203,7 +201,7 @@
   }
 
   .evt_tabpanel > .evt_nav_section > .evt_content {
-    width: 55%;
+    width: 50%;
   }
 }
 
