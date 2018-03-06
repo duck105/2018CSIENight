@@ -1,5 +1,5 @@
 <% events.each do |event| %>
-  <section class="evt_nav_section">
+  <section class="evt_nav_section" id="<%= render_anchor(event) %>">
     <div class="evt_img-container">
       <%= image_tag(event.image_url.to_s, class: "evt_img") %>
     </div>
