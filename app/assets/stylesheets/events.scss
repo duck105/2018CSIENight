@@ -117,11 +117,15 @@
 }
 
 .evt_img {
+  width: 100%;
   background-position: center center;
   background-size: cover;
   border-radius: 0;
   display: block;
   position: relative;
+  @media screen and (min-width: 980px) {
+    min-width: 450px;
+  }
 }
 
 .evt_tabpanel > .evt_nav_section > .evt_img:before {
@@ -174,6 +178,7 @@
 
 
 .evt_tabpanel > .evt_nav_section:nth-child(2n) > .evt_content {
+  text-align: right;
   -moz-align-items: -moz-flex-end;
   -webkit-align-items: -webkit-flex-end;
   -ms-align-items: -ms-flex-end;
@@ -185,8 +190,6 @@
 }
 
 @media screen and (max-width: 1680px) {
-  .evt_img {
-  }
   .evt_tabpanel > .evt_nav_section > .evt_content {
     width: 55%;
   }
@@ -208,10 +211,6 @@
   .evt_tabpanel > .evt_nav_section > .evt_img {
     width: 100%;
   }
-  .evt_tabpanel > .evt_nav_section > .evt_content {
-    padding: 4em 3em 2em 3em ;
-    width: 100%;
-  }
 }
 
 @media screen and (max-width: 736px) {
@@ -222,13 +221,9 @@
     padding-right: 0px;
     padding-left: 0px;
   }
-  .evt_tabpanel > .evt_nav_section > .evt_content {
-    padding: 3em 1.5em 1em 1.5em ;
-  }
 }
 
 // sidebar
-
   #scroll-indicator-bullets {
     position: fixed;
     top: 50%;
