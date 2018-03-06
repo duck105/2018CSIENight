@@ -117,7 +117,6 @@
 }
 
 .evt_img {
-  min-width: 450px;
   background-position: center center;
   background-size: cover;
   border-radius: 0;
@@ -187,17 +186,14 @@
 
 @media screen and (max-width: 1680px) {
   .evt_img {
-    width: 50%;
   }
-
   .evt_tabpanel > .evt_nav_section > .evt_content {
     width: 55%;
   }
 }
 
 @media screen and (max-width: 1280px) {
-  .evt_tabpanel > .evt_nav_section > .evt_img {
-    width: 45%;
+  .evt_img {
   }
 
   .evt_tabpanel > .evt_nav_section > .evt_content {
@@ -219,6 +215,13 @@
 }
 
 @media screen and (max-width: 736px) {
+  .evt_img {
+    width: 100%;
+  }
+  .evt_img-container {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
   .evt_tabpanel > .evt_nav_section > .evt_content {
     padding: 3em 1.5em 1em 1.5em ;
   }
