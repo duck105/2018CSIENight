@@ -200,18 +200,20 @@
       </div>
       <div class="modal-body">
         <div class="row">
-         <div class="col-lg-6 col-md-12">
+         <div class="col-lg-6 col-md-6">
+           <center>
             <% if user.avatar.blank? %>
               <img src="../img/sticker.png" width="100%">                   
             <% else %>
               <img src="<%= image_url(user.avatar.small) %>" width="100%">
             <% end %>  
+           </center>
          </div>
-         <div class="col-lg-6 col-md-12 align-self-end">
+         <div class="col-lg-6 col-md-6 align-self-end">
            <div class="modal-title">
              <div class="row">
                 <div class="col-lg-12 col-md-4">
-                  <h4><%= user.jobs %></h3>
+                  <h4><%= user.jobs %></h4>
                   <h1><%= user.name %></h1>
                 </div>
                 <div class="col-lg-12 col-md-8 align-self-center">
@@ -224,14 +226,14 @@
                 </div>
              </div>
              <hr>
-             <p style="font-size:30px">
+             <p>
                 <%= render_motto(user) %> 
              </p>
            </div>
          </div>
         </div>
       </div>
-    <div class="modal-footer">
+    <div class="modal-footer d-none d-lg-block">
       <button type="button" class="btn" data-dismiss="modal">關閉</button>
     </div>
     </div>
