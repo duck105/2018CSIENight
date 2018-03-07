@@ -109,11 +109,6 @@
               <h1>&nbsp;<%= department.name %><strong>&nbsp;&nbsp;&gt;&gt;</strong></h1>
             <hr>
             </div>
-            <!--
-            <div class="col-4">
-              <img class="department_pic" src="<%= image_url(department.image) %>" alt="<%= department.name %>照片">
-            </div>
-            -->
           </div>
         </div>
         <div class="rbtm">
@@ -169,14 +164,13 @@
               <% event.users.each do |user| %>
                 <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#M<%= user.id %>">
                   <div class="pic_wrapper large-picheight">
-                  <% if user.avatar.blank? %>
-                    <img src="../img/sticker.png" class="pic large-picheight">                   
-                  <% else %>
-                    <img src="<%= image_url(user.avatar) %>" class="pic large-picheight">
-                  <% end %>   
-                  <br/>
+                    <% if user.avatar.blank? %>
+                      <img src="../img/sticker.png" class="pic large-picheight">                   
+                    <% else %>
+                      <img src="<%= image_url(user.avatar) %>" class="pic large-picheight">
+                    <% end %>   
                   </div>
-                  <div>><%= user.name %></div>
+                  <div><%= user.name %></div>
                 </button>
               <% end %>
               </div>
