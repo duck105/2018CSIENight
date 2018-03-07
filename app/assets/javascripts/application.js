@@ -18,6 +18,7 @@
 //= require turbolinks
 //= require popper
 //= require bootstrap
+//= require bootstrap/alert
 
 // one-page side-bar
 (function() {
