@@ -9,11 +9,11 @@
       <%= devise_error_messages! %>
 
       <div class="form-group">
-        <%= f.label :current_password, "Enter Orignial Password" %>
+        <%= f.label :current_password, "Current Password" %>
         <%= f.password_field :current_password, autocomplete: "off", class: "form-control", id: "exampleInputPassword1",placeholder: "Password" %>
       </div>
       <div class="form-group">
-        <%= f.label :password, "Enter New Password" %>
+        <%= f.label :password, "New Password" %>
         <%= f.password_field :password, autocomplete: "off", class: "form-control", id:"exampleInputPassword1", placeholder: "#{@minimum_password_length} 字元以上, 不想改請留白" %>
       </div>
       <div class="form-group">
@@ -21,7 +21,11 @@
         <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", id: "exampleInputPassword1", :maxlength => "256", :placeholder => "Enter new password again", :type => "password" %>
       </div>
       <div class="form-group">
-        <%= f.label :motto, "Enter New Motto" %>
+        <%= f.label :jobs, "稱謂" %>
+        <%= f.text_field :jobs, class: "form-control", id: "exampleInputPassword1" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :motto, "想說的話" %>
         <%= f.text_field :motto, class: "form-control", id: "exampleInputPassword1" %>
       </div>
       <div class="form-group">
@@ -34,6 +38,3 @@
 
   </div>
 </div>
-
-
-
