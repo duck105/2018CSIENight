@@ -1,0 +1,33 @@
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" id="navbarExpand">
+  <%= link_to("mo shíorghrá", root_path(anchor: "top"), class: "navbar-brand") =%>
+  <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <%= link_to("Performance", root_path(anchor: "performance"), class: "nav-link") %>
+      </li>
+      <li class="nav-item">
+        <%= link_to("Info", root_path(anchor: "schedule"), class: "nav-link") %>
+      </li>
+      <li class="nav-item">
+        <%= link_to("Contributors", workers_path, class: "nav-link" ) %>
+      </li>
+      <li class="nav-item">
+        <%= link_to("Sponsors", sponsors_path, class: "nav-link") %>
+      </li>
+      <li class="nav-item">
+        <a href="https://www.facebook.com/2018.CSIE.night/" class="nav-link">Facebook</a>
+      </li>
+
+    </ul>
+      <%= form_tag search_path,:class => "form-inline mt-2 mt-md-0", method: :get do %>
+        <%= text_field_tag :name, params[:name], placeholder: "輸入好友姓名",:class => "form-control mr-sm-2 search" %>
+        <%= submit_tag "Search", name: nil, :class => " btn-outline-success search-btn my-2 my-sm-0" %>
+      
+      <% end %>
+    
+  </div>
+</nav>

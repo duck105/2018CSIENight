@@ -1,14 +1,55 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CSIENight2018</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115190284-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-115190284-1');
+    </script>
+
+    <title>2018資訊之夜-念茲在資 | mo shíorghrá</title>
+    <meta property="og:title" content="2018資訊之夜 念茲在資mo shíorghrá" />
+    <meta property="og:image" content="https://nightweb.csie.org/img/cover.jpg" />
+    <meta property="og:description" content="
+      時間在日記扉頁留下墨跡，
+      走過路過風光旖旎，
+      過往雲煙總是美得無可挑剔，
+      沈浸在回憶裡歇息，
+      才發現那些情，已無蹤跡..." />
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="img/cover-small.ico">
   </head>
 
   <body>
+    <%= render "partials/navbar" %>
+    <%= render "partials/flashes" %>
     <%= yield %>
   </body>
+  <%= render "partials/footer" %>
+  <script src="js/jquery.easing.min.js"></script>
+  <script src="js/smooth-scrolling.js"></script>
+  <script src="js/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/jquery.waypoints.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      var trigger = new ScrollTrigger();
+    });
+    $('body').bind('touchstart',function(){});
+    (function ($) {
+      $(function () {
+        $('.evt_scroll-section').scrollIndicatorBullets({
+          titleSelector: 'h1,h2,h3'
+        });
+      });
+    })(jQuery);
+  </script>
 </html>
+    

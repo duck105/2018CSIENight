@@ -1,0 +1,203 @@
+<header class="masthead text-center" id="top">
+  <div class="col-md-5 p-lg-5 mx-auto my-5"
+ data-scroll="toggle(.scaleDownIn, .scaleDownOut)">
+    <div class="container" id="index-title"></div>
+    <a class="btn btn-outline-secondary" href="#about">More</a>
+  </div>
+  <div class="overlay"></div>
+</header>
+<!-- About -->
+<section class="content-section" id="about">
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4"
+          data-scroll="toggle(.fromRightIn, .fromRightOut)">念茲，在資</h1>
+      <p class="lead"
+         data-scroll="toggle(.fromLeftIn, .fromLeftOut)">2018 資訊之夜 mo shíorghrá</p>
+      <hr class="my-4">
+      <p data-scroll="toggle(.fromLeftIn, .fromLeftOut)">泛黃的照片，逐漸褪色無光。</p>   
+      <p data-scroll="toggle(.fromLeftIn, .fromLeftOut)">黯淡的四周，只剩前方路上車尾燈明晃晃。</p>    
+      <p data-scroll="toggle(.fromLeftIn, .fromLeftOut)">夢裡笑靨逐開，是那般真實。</p>   
+      <p data-scroll="toggle(.fromLeftIn, .fromLeftOut)">伸出手，一切卻早已太遲。</p>    
+      <p data-scroll="toggle(.fromLeftIn, .fromLeftOut)">時間在日記扉頁留下墨跡，</p>    
+      <p data-scroll="toggle(.fromLeftIn, .fromLeftOut)">走過路過風光旖旎，</p>   
+      <p data-scroll="toggle(.fromLeftIn, .fromLeftOut)">過往雲煙總是美得無可挑剔，</p>   
+      <p data-scroll="toggle(.fromLeftIn, .fromLeftOut)">沈浸在回憶裡歇息，</p>
+      <p data-scroll="toggle(.fromLeftIn, .fromLeftOut)">突破緊繃的外殼才發現那些情，已無蹤跡。</p>
+      <p data-scroll="toggle(.fromLeftIn, .fromLeftOut)">曾經汲汲營營晉代衣冠，</p>
+      <p data-scroll="toggle(.fromLeftIn, .fromLeftOut)">如今滄海桑田成古坵。</p>
+      <p data-scroll="toggle(.fromLeftIn, .fromLeftOut)">別擔心，</p>
+      <p data-scroll="toggle(.fromLeftIn, .fromLeftOut)">念茲在茲的窮極盡頭，</p>
+      <p data-scroll="toggle(.fromLeftIn, .fromLeftOut)">是我們一起，念茲，在資。</p>
+      <hr class="my-4">
+      <p class="lead" data-scroll="toggle(.fromLeftIn, .fromLeftOut)">有人看了一眼，卻惦念了一生</p>
+    </div>
+  </div>
+</section>
+
+    <!-- Performance -->
+<section class="content-section" id="performance">
+  <div class="container">
+    <h1 class="display-4 text-center"
+      data-scroll="toggle(.fromTopIn, .fromTopOut)"
+      id="performance-title">Performance
+    </h1>
+    <div class="row no-gutters">
+
+      <div class="col-lg-6">
+        <%= link_to(events_path(anchor: "music"), class: "portfolio-item", :data => { :reload => true } ) do %>
+            <span class="caption">
+              <span class="caption-content">
+                <!-- Song-->
+                <img src="img/performance/white-song.png" alt="">
+                <p class="mb-0">大一民謠|大二民謠|大三民謠|大四民謠|跨屆民謠</p>
+              </span>
+            </span>
+            <img class="img-fluid" src="img/performance/img-song.jpg" alt="">
+
+        <% end %>
+      </div>
+
+      <div class="col-lg-6">
+        <%= link_to(events_path(anchor: "dance"), class: "portfolio-item", :data => { :reload => true } ) do %>
+          <span class="caption">
+            <span class="caption-content">
+              <!-- Dance-->
+              <img src="img/performance/white-dance.png" alt="">
+              <p class="mb-0">大一舞|大二舞|大三舞|大四舞|男女舞</p>
+            </span>
+          </span>
+          <img class="img-fluid" src="img/performance/img-dance.jpg" alt="">
+        <% end %>
+      </div>
+
+      <div class="col-lg-6">
+        <%= link_to(events_path(anchor: "drama"), class: "portfolio-item", :data => { :reload => true } ) do %>
+          <span class="caption">
+            <span class="caption-content">
+              <!-- Drama-->
+              <img src="img/performance/white-drama.png" alt="">
+              <p class="mb-0">大一劇|串場劇</p>
+            </span>
+          </span>
+          <img class="img-fluid" src="img/performance/img-drama.jpg" alt="">
+        <% end %>
+      </div>
+
+      <div class="col-lg-6">
+        <%= link_to(events_path(anchor: "light"), class: "portfolio-item", :data => { :reload => true } ) do %>
+          <span class="caption">
+            <span class="caption-content">
+              <!-- Light-->
+              <img src="img/performance/white-light.png" alt="">
+              <p class="mb-0">螢光舞</p>
+            </span>
+          </span>
+          <img class="img-fluid" src="img/performance/img-light.jpg" alt="">
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Schedule -->
+<section class="content-section" >
+  <div class="jumbotron jumbotron-fluid" id="schedule">
+    <div class="container">
+      <h1 class="display-4 text-center"
+          data-scroll="toggle(.fromTopIn, .fromTopOut)">Schedule
+      </h1>
+    </div>
+    <div class="container">
+      <div class="row">
+        <table class="table table-schedule lead">
+          <thead>
+      <tr>
+        <th colspan="2" class="mid-col" data-scroll="toggle(.fromLeftIn, .fromLeftOut)">上半場</th>
+      </tr>
+          </thead>
+          <tbody>
+      <tr data-scroll="toggle(.fromLeftIn, .fromLeftOut)">
+        <td>大二舞</td>
+        <td class="right-col">18:00-18:08</td>
+      </tr>
+      <tr data-scroll="toggle(.fromLeftIn, .fromLeftOut)">
+        <td>大三舞</td>
+        <td class="right-col">18:10-18:15</td>
+      </tr>
+      <tr data-scroll="toggle(.fromLeftIn, .fromLeftOut)">
+        <td>大一劇</td>
+        <td class="right-col">18:20-18:55</td>
+      </tr>
+      <tr data-scroll="toggle(.fromLeftIn, .fromLeftOut)">
+        <td>男女舞</td>
+        <td class="right-col">19:00-19:08</td>
+      </tr>
+      <tr data-scroll="toggle(.fromLeftIn, .fromLeftOut)">
+        <td>大一民謠</td>
+        <td class="right-col">19:13-19:28</td>
+      </tr>
+      <tr data-scroll="toggle(.fromLeftIn, .fromLeftOut)">
+        <td>大四舞</td>
+        <td class="right-col">19:33-19:41</td>
+      </tr>
+          </tbody>
+        </table>
+        <table class="table table-schedule lead">
+          <thead>
+      <tr>
+        <th colspan="2" class="mid-col"
+            data-scroll="toggle(.fromRightIn, .fromRightOut)">下半場</th>
+      </tr>
+          </thead>
+          <tbody>
+      <tr data-scroll="toggle(.fromRightIn, .fromRightOut)">
+        <td>跨屆民謠</td>
+        <td class="right-col">19:55-20:20</td>
+      </tr>
+      <tr data-scroll="toggle(.fromRightIn, .fromRightOut)">
+        <td>大一舞</td>
+        <td class="right-col">20:25-20:33</td>
+      </tr>
+      <tr data-scroll="toggle(.fromRightIn, .fromRightOut)">
+        <td>男女舞</td>
+        <td class="right-col">20:35-20:43</td>
+      </tr>
+      <tr data-scroll="toggle(.fromRightIn, .fromRightOut)">
+        <td>跨屆民謠</td>
+        <td class="right-col">20:48-21:18</td>
+      </tr>
+      <tr data-scroll="toggle(.fromRightIn, .fromRightOut)">
+        <td>光舞</td>
+        <td class="right-col">21:20-21:30</td>
+      </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="container">
+      <h1 class="display-4 text-center"
+        data-scroll="toggle(.fromTopIn, .fromTopOut)">Map</h1>
+    </div>
+    <div class="container" id="map"></div>
+    <div class="container">
+      <table class="table lead" id="time-and-place">
+        <thead>
+          <tr>
+      <th colspan="2" data-scroll="toggle(.fromLeftIn, .fromLeftOut)">資訊之夜 念茲在資 mo shíorghrá</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-scroll="toggle(.fromLeftIn, .fromLeftOut)">
+      <td>時間</td>
+      <td>2018/3/29（四）18:00</td>
+          </tr>
+          <tr data-scroll="toggle(.fromLeftIn, .fromLeftOut)">
+      <td>地點</td>
+      <td>國立臺灣大學 第一學生活動中心 怡仁堂（活大禮堂）</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

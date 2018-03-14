@@ -1,0 +1,303 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.evt_about_content {
+  padding-left: 60px;
+}
+
+.evt_bg-nav-bar{
+  background-color: #444a50;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+/* event_nav-bar */
+.evt_nav-bar {
+  font-size: 20px;
+  padding-left: 30px;
+}
+
+.evt_nav-tabs {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* evt_about */
+
+.evt_about-container {
+  padding-left: 60px;
+  padding-right: 100px;
+  padding-top: 30px;
+  margin-bottom: 0;
+  background-color: #f0f0f0;
+  @media screen and (max-width: 980px) {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+}
+
+.evt_about-title {
+  margin-bottom: 0px;
+  text-align: left;
+  display: inline-block;
+  padding-left: 0px;
+  padding-right: 100px;
+  font-size: 50px;
+  font-style: italic;
+}
+
+.evt_about-content {
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+/* evt_intro */
+
+.evt_intro-container {
+  background-color: #d9d9d9;
+  margin: 0px;
+  padding: 0px;
+  padding-left: 80px;
+}
+
+.evt_intro-left {
+  overflow: hidden;
+  float: left;
+  width: 100px;
+  height: 100px;
+}
+
+.evt_intro-right {
+  height: 100px;
+  padding-left: 120px;
+}
+
+.evt_intro-title {
+  visibility: hidden;
+  margin-bottom: 0px;
+  font-size: 10px;
+  font-style: italic;
+}
+
+.evt_intro-content {
+  font-size: 20px;
+}
+
+/* evt_tabpanel */
+.evt_tabpanel {
+  border-top: 0 !important;
+}
+
+.evt_tabpanel + * {
+  border-top: 0 !important;
+}
+
+.evt_tabpanel > .evt_nav_section {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-flex-direction: row;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  padding-left: 60px;
+  padding-right: 30px;
+  min-height: 300px;
+  flex-direction: row;
+  background-color: #d9d9d9; /* Light Gray */
+  @media screen and (max-width: 980px) {
+    padding-right: 30px;
+    padding-left: 45px;
+  }
+}
+
+.evt_img-container {
+  padding: 20px 25px 20px 25px;
+}
+
+.evt_img {
+  width: 100%;
+  background-position: center center;
+  background-size: cover;
+  border-radius: 0;
+  display: block;
+  position: relative;
+  @media screen and (min-width: 980px) {
+    min-width: 450px;
+  }
+}
+
+.evt_tabpanel > .evt_nav_section > .evt_img:before {
+  background: rgba(36, 41, 67, 0.9);
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.evt_tabpanel > .evt_nav_section > .evt_content {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-flex-direction: column;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  padding: 1em 1em 1em 1em ;
+  width: 70%;
+}
+
+.evt_tabpanel > .evt_nav_section > .evt_content > .evt_inner {
+  margin: 0 auto;
+  max-width: 100%;
+  width: 65em;
+}
+
+.evt_tabpanel > .evt_nav_section:nth-child(2n) {
+  -moz-flex-direction: row-reverse;
+  -webkit-flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+  background-color: #e6e6e6; /* White */
+  padding-right: 30px;
+}
+
+
+.evt_tabpanel > .evt_nav_section:nth-child(2n) > .evt_content {
+  -moz-align-items: -moz-flex-end;
+  -webkit-align-items: -webkit-flex-end;
+  -ms-align-items: -ms-flex-end;
+  align-items: flex-end;
+  @media screen and (min-width: 980px) {
+    text-align: right;
+    padding-top: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 15px;
+  }
+}
+
+@media screen and (max-width: 1680px) {
+  .evt_tabpanel > .evt_nav_section > .evt_content {
+    width: 55%;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .evt_tabpanel > .evt_nav_section > .evt_content {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .evt_tabpanel > .evt_nav_section {
+    display: block;
+  }
+  .evt_tabpanel > .evt_nav_section > .evt_img {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  .evt_img {
+    width: 100%;
+  }
+  .evt_tabpanel > .evt_nav_section > .evt_content {
+    width: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .evt_img-container {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+}
+
+// sidebar
+  #scroll-indicator-bullets {
+    position: fixed;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+        -ms-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+    left: 0;
+    z-index: 8;
+    font-size: .8rem; 
+  }
+    #scroll-indicator-bullets ul {
+      list-style: none; 
+      padding-left: 15px;
+    }
+      #scroll-indicator-bullets ul li {
+        position: relative;
+        padding-right: 7px; 
+      }
+        #scroll-indicator-bullets ul li a {
+          display: block;
+          color: black;
+          padding: 4px 0 0 0;
+          -webkit-user-select: none !important;
+          -webkit-touch-callout: none; 
+        }
+        #scroll-indicator-bullets ul li .bullet-nav-title {
+          position: absolute;
+          top: 4px;
+          left: 10px;
+          display: block;
+          visibility: hidden;
+          opacity: 0.0;
+          white-space: nowrap;
+          text-align: left;
+          -webkit-transition: opacity 300ms, right 300ms, text-shadow 300ms;
+          transition: opacity 300ms, right 300ms, text-shadow 300ms;
+          -webkit-transition-timing-function: ease-out;
+                  transition-timing-function: ease-out;
+          padding: 2px 22px 2px 4px;
+          border-radius: 2px;
+          background: rgba(200, 200, 200, 0.4); 
+        }
+        #scroll-indicator-bullets ul li .bullet-item-link .circle {
+          position: relative;
+          top: 2px;
+          display: block;
+          width: 12px;
+          height: 12px;
+          border-radius: 6px;
+          border: 2px solid black;
+          background: transparent;
+          margin: 4px 0; 
+        }
+        #scroll-indicator-bullets ul li .bullet-item-link.active .circle {
+          background: black; 
+        }
+        #scroll-indicator-bullets ul li.show-title .circle {
+          text-shadow: none; 
+        }
+        #scroll-indicator-bullets ul li.show-title .bullet-nav-title {
+          opacity: 1.0;
+          right: 2px;
+          visibility: visible; 
+        }
+      #scroll-indicator-bullets ul.open .bullet-nav-title {
+        visibility: visible; 
+      }
+
+@media only screen and (max-width: 980px) {
+  #scroll-indicator-bullets ul li .bullet-nav-title {
+    display: none;
+  } 
+}

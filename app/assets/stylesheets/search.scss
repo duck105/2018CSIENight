@@ -1,0 +1,176 @@
+// Place all the styles related to the search controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@font-face {
+  font-family: "7-digits";
+  src: url(/assets/fonts/DSEG7ClassicMini-BoldItalic.ttf);
+} 
+.time-table{
+  background-color: #DDDDDD;
+  width: auto;
+  font-family: 7-digits;
+}
+.bar{
+  min-height: 0.3em;
+}
+.train, .time{
+  background-color: #333333;
+  font-size: 1.2em;
+  padding: 0;
+}
+.train {
+  color: orange;
+}
+.time {
+  color: red;
+}
+
+fw{
+  width: 100%;
+}
+
+div#search-img:before {
+  content: "";
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  background: url(../img/cover.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+@media(max-width: 420px){
+  div#search-img:before {
+    height: 820px;
+  }
+}
+
+.avatar {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.avatar img {
+    max-height: 150px;
+    border-radius: 15px;
+}
+
+span.badge {
+    margin-bottom: 0.5rem;
+}
+
+.search-row {
+    margin-right: 0rem;
+    margin-left: 0rem;
+    margin-bottom: 1rem;
+}
+
+.search-box {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.search-box div {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.search-box-title {
+    background-color: rgba(255, 255, 255, 0.9);
+    min-height: 2rem;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.search-box-title p {
+    font-weight: bold;
+    margin-bottom: 0rem;
+}
+
+.search-box-content {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding-top: 0.8rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+#search-about .search-box-content {
+    min-height: 10rem;
+}
+
+#search-time .search-box-content {
+    min-height: 10rem;
+}
+
+#search-others .search-box-content {
+    min-height: 12rem;
+}
+
+div#search-about {
+    margin-top: 15rem;
+}
+
+div#search-none {
+    margin-top: 15rem;
+}
+
+#search-about .search-box {
+    width: 77%;
+}
+
+.two-col .search-box {
+    width: 46%;
+}
+
+@media (max-width: 775px) {
+  .two-col .search-box {
+	 width: 95%;
+  }
+}
+
+@media (max-width: 972px) {
+  #search-about .search-box {
+    width: 95%;
+  }
+}
+
+#search-img thead th {
+    border-top: hidden !important;
+    border-bottom: hidden !important;
+}
+
+#search-img td {
+    border-top: hidden !important;
+    border-bottom: hidden !important;
+}
+
+#search-img .table td {
+    padding: 0.5rem;
+}
+
+.table-avatar {
+    width: 160px;
+}
+
+@media (max-width: 410px) {
+  #search-perform .avatar img {
+    max-height: 100px;
+  }
+}
+
+.search-link {
+  color: black
+}

@@ -6,7 +6,6 @@ git_source(:github) do |repo_name|
 end
 
 gem 'rails', '~> 5.1.4'
-gem 'sqlite3'
 gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -16,14 +15,16 @@ gem 'jbuilder', '~> 2.5'
 gem 'pg', '~> 0.18'
 gem 'jquery-rails'
 
-gem 'devise', '~> 4.2'
-gem 'mini_magick', "~> 4.6.0"
-gem 'carrierwave', '~> 1.0'
-gem 'omniauth', '~> 1.3.1'
-gem 'omniauth-facebook', '~> 4.0.0'
-gem 'bourbon', '~> 4.2.7'
-gem 'administrate', '~> 0.3.0'
-gem 'kaminari', '~> 0.17.0'
+gem 'devise', '~> 4.4', '>= 4.4.1'
+gem 'mini_magick', '~> 4.8'
+gem 'carrierwave', '~> 1.2', '>= 1.2.2'
+gem 'bourbon', '~> 5.0'
+gem 'administrate', '~> 0.9.0'
+gem 'kaminari', '~> 1.1', '>= 1.1.1'
+gem 'bootstrap', '~> 4.0'
+gem 'awesome_rails_console'
+gem 'ckeditor', github: 'galetahub/ckeditor'
+gem 'fog-aws', '~> 0.7.6'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
